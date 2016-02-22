@@ -92,7 +92,7 @@ To start the AMCL demo:
 
 .. code-block:: bash
 
-    roslaunch jackal_navigation amcl_demo.launch [map_file:=/path/to/my/map.yaml]
+    roslaunch jackal_navigation amcl_demo.launch map_file:=/path/to/my/map.yaml
 
 If you don't specify ``map_file``, it defaults to an included pre-made map of the default "Jackal Race"
 environment which Jackal's simulator spawns in. If you're using a real Jackal in your own environment,
