@@ -1,3 +1,3 @@
 [submodule "doc/theme"]
 	path = doc/theme
-	url = git@bitbucket.org:clearpathrobotics/clearpath-sphinx-theme.git
+	url = https://bitbucket.org/clearpathrobotics/clearpath-sphinx-theme.git
