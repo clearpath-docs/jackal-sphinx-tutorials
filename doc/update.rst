@@ -97,6 +97,7 @@ standard Mini-B USB cable. Then, from the prompt, run:
 .. code-block:: bash
 
     sudo sixpair
+    sudo sixad --boot-yes
 
 You should see a notice that the MAC address of Jackal's bluetooth adapter has been written into the controller. Now
 disconnect the USB cable and you should be able to press the pair button and achieve a pairing. Note that this first
