@@ -37,3 +37,9 @@ skip the introductory chapters and jump straight to these ones.
     calibration
     update
 
+.. toctree::
+    :titlesonly:
+    :hidden:
+    :caption: Jackal Packages
+
+    description
