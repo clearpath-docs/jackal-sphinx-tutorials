@@ -38,17 +38,17 @@ In order to power the Jetson make a cable which connects to the 12V user power t
 Step 3: Installing the software
 --------------------------------
 
-On a Ubuntu machine download jetpack 3.2.
+On a Ubuntu machine download jetpack 3.3.
 
-`Download Jetpack <https://developer.nvidia.com/embedded/downloads#?search=jetpack%203.2>`_
+`Download Jetpack <https://developer.nvidia.com/embedded/dlc/jetpack-l4t-3_3>`_
 
-`Jetpack Install Instructions <http://docs.nvidia.com/jetpack-l4t/3.2/index.html#developertools/mobile/jetpack/l4t/3.2/jetpack_l4t_install.htm>`_
+`Jetpack Install Instructions <https://docs.nvidia.com/jetson/archives/jetpack-archived/jetpack-321/index.html#jetpack/3.2.1/install.htm%3FTocPath%3D_____3>`_
 
 Follow the installation instructions from Nvidia to start the installer. Install at least the Linux for Tegra Host Side Image Setup.
 
 .. image:: minimuminstall.png
 
-`Download the TX2 image <http://www.clearpathrobotics.com/downloads/TX2_28.2.1.img.bz2>`_ and place it into "{install directory}/64_TX2/Linux_for_Tegra_tx2/" Open a terminal and navigate to "{install directory}/64_TX2/Linux_for_Tegra_tx2/". Use pbzip2 to decompress the image. "pbzip2 -d {image name}.img.bz2". Pbzip2 is the parallel version of bzip2. Unziping can take some time.
+`Download the TX2 image <https://s3.amazonaws.com/cprjetsonimages/TX2/TX2_28.2.1.img.raw.bz2>`_ and place it into "{install directory}/64_TX2/Linux_for_Tegra_tx2/" Open a terminal and navigate to "{install directory}/64_TX2/Linux_for_Tegra_tx2/". Use pbzip2 to decompress the image. "pbzip2 -d {image name}.img.bz2". Pbzip2 is the parallel version of bzip2. Unziping can take some time.
 
 **Caution:** you will need 32 GB of free space for the image. Copy the uncompressed image and rename it to "bootloader/system.img".
 
@@ -62,7 +62,7 @@ Then run ``sudo ./flash.sh -r -k APP jetson-tx2 mmcblk0p1`` on the host computer
 
 .. image:: flashcomplete.png
 
-The TX2 will reboot and will have ROS Kinetic installed along with the Jackal and Husky drivers. To setup the Jetson to work with the Jackal, run ``bash ~/JACKAL_SETUP.sh`` on the Jetson and restart. When the Jetson starts up again, it should be connected to the Jackal. To see that the Jackal is connected by opening a terminal and executing "rostopic echo /status". You should see a 1hz message containing the Jackal's diagnostic information.
+The TX2 will reboot and will have ROS Kinetic installed along with the Jackal drivers. To setup the Jetson to work with the Jackal, run ``bash ~/JACKAL_SETUP.sh`` on the Jetson and restart. When the Jetson starts up again, it should be connected to the Jackal. To see that the Jackal is connected by opening a terminal and executing "rostopic echo /status". You should see a 1hz message containing the Jackal's diagnostic information.
 
 If you would like to pair a PS4 controller to drive the Jackal, hold down the PS and Share buttons on the controller until the light bar starts to flash. In a terminal on the Jackal, run ``sudo ds4drv-pair`` and wait for the controller to connect.  With the controller paired you should be able to control the Jackal by pressing L1 and using the left stick to drive. For more information see the Jackal manual.
 
