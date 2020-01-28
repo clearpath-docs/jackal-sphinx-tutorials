@@ -31,7 +31,7 @@ is the case in one of two ways:
 1. The firmware and PC are unable to connect to each other, which will be apparent if the two-arrow comms indicator
    fails to come on after system bootup.
 2. If the firmware version number in the ``/status`` message does not match the package version output by
-   ``dpkg -s ros-indigo-jackal-firmware``. In the future there will be an automated check for this which outputs
+   ``dpkg -s ros-kinetic-jackal-firmware``. In the future there will be an automated check for this which outputs
    a diagnostics warning when a firmware update is available to be applied.
 
 If new firmware is available, follow the below procedure to flash it to Jackal's MCU:
@@ -103,4 +103,3 @@ You should see a notice that the MAC address of Jackal's bluetooth adapter has b
 disconnect the USB cable and you should be able to press the pair button and achieve a pairing. Note that this first
 pairing *may* cause the joystick to come up as ``/dev/input/js1`` rather than ``/dev/input/js0``. If Jackal does not
 respond to your commands, power-cycle the full system and you should be set.
-

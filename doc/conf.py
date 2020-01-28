@@ -40,10 +40,10 @@ html_sidebars = {
 }
 
 rst_prolog = """
-.. |ros_distro| replace:: indigo
-.. |ubuntu_distro| replace:: trusty
+.. |ros_distro| replace:: kinetic
+.. |ubuntu_distro| replace:: xenial
 """
-#.. ubuntu_distro: trusty
+#.. ubuntu_distro: xenial
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
@@ -56,4 +56,3 @@ html_logo = 'clearpathlogo.png'
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 html_favicon = 'favicon.ico'
-
