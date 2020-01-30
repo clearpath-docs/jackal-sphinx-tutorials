@@ -90,16 +90,14 @@ integrated accessories which require additional launchers or URDF.
 Bluetooth Controller Pairing
 ----------------------------
 
-If your Sixaxis controller runs out of batteries, or you purchase a new one, you might want to re-pair your platform
-and controller. To do this, lower the computer tray and plug the controller into an available USB port using a
-standard Mini-B USB cable. Then, from the prompt, run:
+If your PS4 controller runs out of batteries, or you purchase a new one, you might want to re-pair your platform
+and controller. To do this, put the controller into pairing mode by pressing and holding the Share & PS buttons
+until the controller's LED flashes rapidly in white.  Then SSH into the robot and run
 
 .. code-block:: bash
 
-    sudo sixpair
-    sudo sixad --boot-yes
+    sudo ds4drv-pair
 
-You should see a notice that the MAC address of Jackal's bluetooth adapter has been written into the controller. Now
-disconnect the USB cable and you should be able to press the pair button and achieve a pairing. Note that this first
-pairing *may* cause the joystick to come up as ``/dev/input/js1`` rather than ``/dev/input/js0``. If Jackal does not
-respond to your commands, power-cycle the full system and you should be set.
+Once the pairing is complete you should be able to control the robot using your controller.  Note that the first time
+you pair the controller it may be enumerated as the wrong device.  If the robot does not respond to your commands,
+power-cycle the full system and you should be set.
