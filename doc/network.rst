@@ -19,7 +19,7 @@ static IP:
 
 .. code-block:: bash
 
-    ssh administrator@192.168.1.11
+    ssh administrator@192.168.131.1
 
 The default password is ``clearpath``. You should now be logged into Jackal as the administrator user.
 
@@ -84,7 +84,7 @@ those two key environment variables in the present context.
 
     source remote-jackal.sh
 
-Now, when you run commands like ``rostopic list``, ``rostopic echo``, ``rosnode list``, and others, the output 
+Now, when you run commands like ``rostopic list``, ``rostopic echo``, ``rosnode list``, and others, the output
 you see should reflect the activity on Jackal's ROS master, rather than on your own machine. Once you've
 verified the basics (list, echo) from the prompt, try launching some of the standard visual ROS tools:
 
