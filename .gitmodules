@@ -4,6 +4,6 @@
 [submodule "clearpath-sphinx-theme"]
 	path = clearpath-sphinx-theme
 	url = http://gitlab.clearpathrobotics.com/research/clearpath-sphinx-theme.git
-[submodule "clearpath-latex"]
-	path = clearpath-latex
-	url = https://github.com/clearpathrobotics/clearpath-latex.git
+[submodule "latex/clearpath-latex"]
+	path = latex/clearpath-latex
+	url = git@github.com:civerachb-cpr/clearpath-latex
