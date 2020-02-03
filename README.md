@@ -2,7 +2,7 @@
 
 ## Setup
     sudo apt-get install texlive-full texlive-xetex texmaker python-pip latexmk
-    pip install sphinx
+    pip3 install sphinx
 
 ## Download
 When downloading this repository, we also get a CP theme for the web version to make it look pretty.  The easiest way
