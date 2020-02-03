@@ -85,6 +85,6 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'JackalTutorials.tex', 'Jackal Tuturials',
+    (master_doc, 'JackalTutorials.tex', 'Jackal Tutorials',
      'Dave Niewinski', 'manual'),
 ]
