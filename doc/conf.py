@@ -40,10 +40,10 @@ html_sidebars = {
 }
 
 rst_prolog = """
-.. |ros_distro| replace:: indigo
-.. |ubuntu_distro| replace:: trusty
+.. |ros_distro| replace:: kinetic
+.. |ubuntu_distro| replace:: xenial
 """
-#.. ubuntu_distro: trusty
+#.. ubuntu_distro: xenial
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
@@ -57,3 +57,34 @@ html_logo = 'clearpathlogo.png'
 # pixels large.
 html_favicon = 'favicon.ico'
 
+# -- Options for LaTeX output ------------------------------------------------
+latex_engine = "xelatex"
+latex_docclass = {
+   'howto': 'clearpath-latex/clearpath-manual',
+   'manual': 'clearpath-latex/clearpath-manual',
+}
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    # 'papersize': 'letterpaper',
+
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    # 'pointsize': '10pt',
+
+    # Additional stuff for the LaTeX preamble.
+    #
+    # 'preamble': '',
+
+    # Latex figure (float) alignment
+    #
+    # 'figure_align': 'htbp',
+}
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title,
+#  author, documentclass [howto, manual, or own class]).
+latex_documents = [
+    (master_doc, 'JackalTutorials.tex', 'Jackal Tutorials',
+     'Dave Niewinski', 'manual'),
+]
