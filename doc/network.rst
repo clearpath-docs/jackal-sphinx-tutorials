@@ -115,12 +115,10 @@ However, there is experimental support in Jackal for a modern network manager ca
              you could end up with a platform which will need to be :ref:`reflashed back to the factory state <scratch>` in
              order to be usable. If you're comfortable with this and have backed up your data, proceed.
 
-Add the PPA which makes up-to-date connman releases available to Ubuntu 14.04, and install connman.
+To install connman from the Ubuntu repositories, run the following command:
 
 .. code-block:: bash
 
-    sudo add-apt-repository ppa:mikepurvis/network
-    sudo apt-get update
     sudo apt-get install connman
 
 Now edit the upstart job file in ``/etc/init/connman.conf``. Suggested configuration:
