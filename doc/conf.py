@@ -11,6 +11,8 @@ extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.doctest',
     'sphinx.ext.viewcode',
+    'sphinx-prompt',
+    'sphinx_substitution_extensions'
 ]
 
 extlinks = {
@@ -39,11 +41,20 @@ html_sidebars = {
    '**': ['sidebartoc.html', 'sourcelink.html', 'searchbox.html']
 }
 
+# global substitutions -- THESE ONLY WORK OUTSIDE OTHER MARKUP (i.e. ``/opt/ros/|ros_distro|/`` won't work!)
 rst_prolog = """
 .. |ros_distro| replace:: kinetic
 .. |ubuntu_distro| replace:: xenial
+.. |rosd_path| replace:: ``/etc/ros/kinetic/ros.d``
+.. |ros_path| replace:: ``/opt/ros/kinetic``
+.. |dpkg_s_firmware| replace:: ``dpkg -s ros-kinetic-jackal-firmware``
 """
-#.. ubuntu_distro: xenial
+
+# substitutions for substitution-code-block -- THESE ONLY WORK IN CODE BLOCKS
+substitutions = [
+    ('|ros_distro|', 'kinetic'),
+    ('|ubuntu_distro', 'xenial'),
+]
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 html_show_sphinx = False
