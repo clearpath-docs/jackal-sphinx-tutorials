@@ -1,6 +1,14 @@
 Navigating with Jackal
 ======================
 
+.. note::
+
+    Before you can run the commands in this tutorial, make sure to install Jackal's navigation packages:
+
+    .. substitution-code-block:: bash
+
+        sudo apt-get install ros-|ros_distro|-jackal-navigation
+
 Below are the example launch files for three different configurations for navigating Jackal:
 
 - Navigation in an odometric frame without a map, using only :roswiki:`move_base`.
@@ -118,4 +126,3 @@ may be a good fit for your team. Please `get in touch for more details`__.
 
 .. _contact: http://www.clearpathrobotics.com/contact/
 __ contact_
-
