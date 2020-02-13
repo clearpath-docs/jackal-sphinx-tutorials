@@ -57,6 +57,10 @@ Gazebo not only simulates the physical presence of the laser scanner, it also pr
 which reflects the robot's surroundings in its simulated world. We will visualize the simulated laser
 scanner data shortly.
 
+.. note::
+
+    When simulating Jacka;=l, you must leave Gazebo running.  Closing Gazebo will prevent other tools, such as
+    rviz (see below) from working correctly.
 
 Launch rviz
 -----------
