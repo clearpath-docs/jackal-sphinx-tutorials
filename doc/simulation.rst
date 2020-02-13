@@ -59,7 +59,7 @@ scanner data shortly.
 
 .. note::
 
-    When simulating Jacka;=l, you must leave Gazebo running.  Closing Gazebo will prevent other tools, such as
+    When simulating Jackal, you must leave Gazebo running.  Closing Gazebo will prevent other tools, such as
     rviz (see below) from working correctly.
 
 Launch rviz
