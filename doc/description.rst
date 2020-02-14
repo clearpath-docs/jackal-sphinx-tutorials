@@ -1,9 +1,9 @@
 jackal_description Package
 ===========================
 
-The jackal_description package is the URDF robot description for Jackal UGV. 
+The jackal_description package is the URDF robot description for Jackal UGV.
 
-.. _Source: https://github.com/jackal/jackal 
+.. _Source: https://github.com/jackal/jackal
 
 
 Overview
@@ -14,7 +14,7 @@ This package provides a `URDF <http://wiki.ros.org/urdf>`_ model of Jackal.  For
 .. image:: jackal-urdf.png
 
 
-Accessories 
+Accessories
 ------------
 
 Jackal has a suite of optional payloads called accessories. These payloads can be enabled and placed on Jackal using environment variables specified at the time the `xacro <http://wiki.ros.org/xacro>`_ is rendered to URDF. Available accessory vars are:
@@ -27,15 +27,19 @@ Jackal has a suite of optional payloads called accessories. These payloads can b
     </tr>
     <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER</tt> </p></td>
       <td><p><tt>0</tt> </p></td>
-      <td><p>Enable primary laser scanner. </p></td>
+      <td><p>Enable primary laser scanner. By default this is the LMS1xx, but can be replaced with a Hokuyo UST10 if <tt>JACKAL_LASER_HOKUYO</tt> is set</p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_HOKUYO</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Changes the primary laser scanner from a LMS1xx to a UST10 when set to 1</p></td>
     </tr>
     <tr>  <td><span class="anchor" id="line-12"></span><p><tt>JACKAL_LASER_MOUNT</tt> </p></td>
       <td><p><tt>front</tt> </p></td>
       <td><p>Where to attach primary laser scanner on Jackal. </p></td>
     </tr>
     <tr>  <td><span class="anchor" id="line-13"></span><p><tt>JACKAL_LASER_OFFSET</tt> </p></td>
-      <td><p><tt>"0&nbsp;0&nbsp;0"</tt> </p></td>
-      <td><p>XYZ offset from the mount. </p></td>
+      <td><p><tt>0&nbsp;0&nbsp;0</tt> <i>or</i> <tt>0.12&nbsp;0&nbsp;0</tt> </p></td>
+      <td><p>XYZ offset from the mount. The second offset is used if <tt>JACKAL_LASER_HOKUYO</tt> is set.</p></td>
     </tr>
     <tr>  <td><span class="anchor" id="line-14"></span><p><tt>JACKAL_LASER_RPY</tt> </p></td>
       <td><p><tt>"0&nbsp;0&nbsp;0"</tt> </p></td>
@@ -128,9 +132,9 @@ As an alternative to individually specifying each accessory, some fixed configur
 Config:                               Description:
 ====================================  ====================================================
 base                                  Base Jackal, includes IMU and GPS
-front_laser                           Include front-facing LMS1xx LIDAR. 
+front_laser                           Include front-facing LMS1xx LIDAR.
 front_bumblebee2                      Includes front-facing Pointgrey Bumblebee2
 front_flea3                           Includes front-facing Pointgrey Flea3
 ====================================  ====================================================
 
-Please see `jackal_simulator <http://wiki.ros.org/jackal_simulator>`_ for more information on simulating Jackal. 
+Please see `jackal_simulator <http://wiki.ros.org/jackal_simulator>`_ for more information on simulating Jackal.
