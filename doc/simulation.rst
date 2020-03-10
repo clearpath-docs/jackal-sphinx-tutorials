@@ -14,7 +14,7 @@ set up on your Ubuntu desktop, and install the Jackal-specific metapackages for 
 
 .. code:: bash
 
-    sudo apt-get install ros-kinetic-jackal-simulator ros-kinetic-jackal-desktop ros-kinetic-jackal-navigation
+    sudo apt-get install ros-melodic-jackal-simulator ros-melodic-jackal-desktop ros-melodic-jackal-navigation
 
 
 Launch Gazebo
