@@ -1,9 +1,8 @@
 Jackal UGV Tutorials
-======================   
+======================
 
 .. image:: jackal_banner.png
     :alt: Jackal Robot
-      
 
 This package supplies Sphinx-based tutorial content to assist you with setting up and operating your Jackal_
 mobile robot. The tutorials topics are listed in the left column, and presented in the suggested reading order.
@@ -31,8 +30,8 @@ skip the introductory chapters and jump straight to these ones.
 
     Overview <self>
     simulation
-    navigation
     network
+    navigation
     startup
     calibration
     update

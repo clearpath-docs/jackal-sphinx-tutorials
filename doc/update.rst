@@ -31,7 +31,7 @@ is the case in one of two ways:
 1. The firmware and PC are unable to connect to each other, which will be apparent if the two-arrow comms indicator
    fails to come on after system bootup.
 2. If the firmware version number in the ``/status`` message does not match the package version output by
-   ``dpkg -s ros-indigo-jackal-firmware``. In the future there will be an automated check for this which outputs
+   ``dpkg -s ros-kinetic-jackal-firmware``. In the future there will be an automated check for this which outputs
    a diagnostics warning when a firmware update is available to be applied.
 
 If new firmware is available, follow the below procedure to flash it to Jackal's MCU:
@@ -67,7 +67,7 @@ If Jackal's computer has become inoperable, or for any reason you want to restor
 by opening Jackal, lowering the computer tray, and connecting a screen and keyboard, as well as a wired internet
 connection. You can then download the most recent version of the Jackal boot ISO from the following location:
 
-http://packages.clearpathrobotics.com/stable/images/latest/indigo-jackal/amd64/
+http://packages.clearpathrobotics.com/stable/images/latest/
 
 Use unetbootin or a similar tool to flash the ISO image to a USB memory stick. Boot Jackal's computer with the USB
 memory connected, and you should be in the purple Debian/Ubuntu installer. The installer runs by itself and shuts
@@ -90,17 +90,14 @@ integrated accessories which require additional launchers or URDF.
 Bluetooth Controller Pairing
 ----------------------------
 
-If your Sixaxis controller runs out of batteries, or you purchase a new one, you might want to re-pair your platform
-and controller. To do this, lower the computer tray and plug the controller into an available USB port using a
-standard Mini-B USB cable. Then, from the prompt, run:
+If your PS4 controller runs out of batteries, or you purchase a new one, you might want to re-pair your platform
+and controller. To do this, put the controller into pairing mode by pressing and holding the Share & PS buttons
+until the controller's LED flashes rapidly in white.  Then SSH into the robot and run
 
 .. code-block:: bash
 
-    sudo sixpair
-    sudo sixad --boot-yes
+    sudo ds4drv-pair
 
-You should see a notice that the MAC address of Jackal's bluetooth adapter has been written into the controller. Now
-disconnect the USB cable and you should be able to press the pair button and achieve a pairing. Note that this first
-pairing *may* cause the joystick to come up as ``/dev/input/js1`` rather than ``/dev/input/js0``. If Jackal does not
-respond to your commands, power-cycle the full system and you should be set.
-
+Once the pairing is complete you should be able to control the robot using your controller.  Note that the first time
+you pair the controller it may be enumerated as the wrong device.  If the robot does not respond to your commands,
+power-cycle the full system and you should be set.
