@@ -47,15 +47,21 @@ Follow the installation instructions from Nvidia to start the installer. Install
 
 .. image:: minimuminstall.png
 
-`Download the TX2 image <https://s3.amazonaws.com/cprjetsonimages/TX2/TX2_28.2.1.img.raw.bz2>`_ and place it into "{install directory}/64_TX2/Linux_for_Tegra_tx2/".  Open a terminal and navigate to "{install directory}/64_TX2/Linux_for_Tegra_tx2/". Use pbzip2 to decompress the image. "pbzip2 -d {image name}.img.bz2". Pbzip2 is the parallel version of bzip2. Unziping can take some time.
+`Download the TX2 image <https://s3.amazonaws.com/cprjetsonimages/TX2/TX2_202003181130.img.raw.bz2>`_ and place it into ``{install directory}/64_TX2/Linux_for_Tegra_tx2/``.  Open a terminal and navigate to ``{install directory}/64_TX2/Linux_for_Tegra_tx2/``. Run the following command to unzip the image:
 
-**Caution:** you will need 32 GB of free space for the image. Copy the uncompressed image and rename it to "bootloader/system.img".
+.. code-block:: bash
+
+  pbzip2 -d {image name}.img.bz2
+
+Pbzip2 is a parallel version of bzip2.  You may need to install it by running ``sudo apt-get install pbzip2`` if it is not already installed on your computer.  Unzipping the file may take some time.
+
+**Caution:** you will need 32 GB of free space for the image. Copy the uncompressed image and rename it to ``{install directory}/64_TX2/Linux_for_Tegra_tx2/bootloader/system.img``.
 
 .. note::
   To verify the download, below are the MD5 sums of the download and the extracted image:
 
-  * 10bd148c346f8be4b02218e301b6dc4d  -  TX2_28.2.1.img.raw.bz2
-  * f4efc8b1a65a8d5f9465d4521188dd5e  -  TX2_28.2.1.img.raw
+  * 1b49f6cb40ee766c947d75ae1669a83f  -  TX2_202003181130.img.raw.bz2
+  * c71c2a4e61bf485ac936300b37f9a6ec  -  TX2_202003181130.img.raw
 
 Connect to the TX2 with a micro USB cable to the USB0 port. Power the TX2 either by turning on the Jackal or using the included power supply Next put the TX2 into recovery mode.
 
