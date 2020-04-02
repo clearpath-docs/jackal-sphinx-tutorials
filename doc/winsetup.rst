@@ -9,6 +9,10 @@ for use.
 The following instructions assume that the Jackal is connected to a keyboard and mouse during setup. Once 
 configured, these can be removed and remote access can be leveraged.
 
+For more information on ROS on Windows, please visit `Microsoft's ROS documentation`_.
+
+.. _Microsoft's ROS documentation: http://aka.ms/ros
+
 Installing Windows 10
 ---------------------
 
@@ -24,12 +28,16 @@ is an embedded version of Windows 10 for dedicated purpose devices, such as a Ro
 This will install the development platform on the Jackal, which allows you to develop your robotics solutions. Once you've 
 finalized your development, you can build a deployment package and deploy your solutions using Chocolatey. 
 
-If you see any errors, please `get in touch`_ and we'll see if we can get you sorted out.
+If you see any problems with Jackal, please `get in touch`_ and we'll see if we can get you sorted out.
+
+If you have Windows specific questions or problems, Microsoft offers `community support through Github`_ and `paid support`_. 
 
 .. _download a trial: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise
-.. _ROS Wiki instructions: https://wiki.ros.org/Installation/Windows)
+.. _ROS Wiki instructions: https://wiki.ros.org/Installation/Windows
 .. _USB Boot Stick: https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/install-windows-from-a-usb-flash-drive
 .. _get in touch: https://support.clearpathrobotics.com/hc/en-us/requests/new
+.. _community support through Github: https://github.com/ms-iot/rosonwindows
+.. _paid support: http://aka.ms/ros/support
 
 Installing Jackal software
 --------------------------
@@ -80,7 +88,7 @@ if that happens; just press the external power button again, and you should be b
 
 
 Wireless Network Setup
--------------
+----------------------
 Windows provides an enterprise class network stack. To connect to a `Wifi`_, use the Windows networking user interface to connect 
 to an access point. 
 
@@ -108,7 +116,8 @@ Once the pairing is complete you should be able to control the robot using your 
 you pair the controller it may be enumerated as the wrong device.  If the robot does not respond to your commands,
 power-cycle the full system and you should be set.
 
-To use teleop on Jackal, clone Microsoft's fork of the joystick driver, which leverages the Open Source SDL2 library for controller interfaces:
+To use teleop on Jackal, clone Microsoft's fork of the joystick driver, which leverages the Open Source SDL2 library for controller interfaces. 
+You'll need to ensure that this joystick ROS node is started by your launch files.
 
 .. code-block:: batch
 

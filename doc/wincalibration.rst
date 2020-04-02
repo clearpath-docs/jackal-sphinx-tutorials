@@ -31,7 +31,7 @@ Running Jackal's Calibration
 
 To run the calibration routine, connect to Jackal by SSH, and execute:
 
-.. code-block:: bash
+.. code-block:: batch
 
     rosrun jackal_base calibrate_compass.bat
 
@@ -39,7 +39,7 @@ Jackal should rotate slowly in place for 60 seconds, recording magnetometer data
 
 The output will be:
 
-.. code-block:: bash
+.. code-block:: batch
 
     Started rosbag record, duration 60 seconds, pid [6793]
     Started motion commands, pid [6794]
@@ -57,12 +57,3 @@ The output will be:
     Restart ROS service to begin using saved calibration.
 
 
-Once complete, you will be prompted to enter the user password in order to save the new calibration
-into ``$ROS_ETC_DIR``. Once this is done, restart the ROS service to begin using the new calibration:
-
-.. code-block:: bash
-
-    sudo service ros restart
-
-Calibration should be performed when jackal is first received, and any time the platform is modified by adding
-new peripherals. It is also recommended to recalibrate annually as part of seasonal maintenance.

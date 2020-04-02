@@ -41,3 +41,24 @@ xacro) at runtime.
 The second, more sophisticated way to modify the URDF is to create a *new* package for your own robot, and build
 your own URDF which wraps the one provided by :roswiki:`jackal_description`.
 
+Starting ROS at boot
+--------------------
+
+To automatically start on ROS boot, you'll use the Windows Task Scheduler to start the task. The Task scheduler is 
+passed a Windows command file, which needs to start the ROS environment, and your code.
+
+Create a Windows command file, which includes the ROS environment and Install environment. 
+
+**c:\catkin_ws\start_ros.bat**
+
+.. code:: batch
+    call c:\opt\ros\melodic\x64\setup.bat
+    call c:\catkin_ws\install\setup.bat
+    roslaunch <package> <launch file>
+
+Use the command Schtasks, to add a task which calls this script:
+.. code:: batch
+    schtasks /Create /RU <User> /RP <password> /SC ONLOGON /TN ROS /TR "c:\catkin_ws\start_ros.bat"
+
+The next time the system starts, the ROS task will run.
+
