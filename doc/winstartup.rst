@@ -47,17 +47,24 @@ Starting ROS at boot
 To automatically start on ROS boot, you'll use the Windows Task Scheduler to start the task. The Task scheduler is 
 passed a Windows command file, which needs to start the ROS environment, and your code.
 
-Create a Windows command file, which includes the ROS environment and Install environment. 
-
-**c:\catkin_ws\start_ros.bat**
+Create a Windows command file, which includes the ROS environment and Install environment:
 
 .. code:: batch
+
+    c:\catkin_ws\start_ros.bat
+
+Inside that file, place the commands to initiatize ROS, initialize your workspace, and launch your top level launch file:
+
+.. code:: batch
+
     call c:\opt\ros\melodic\x64\setup.bat
     call c:\catkin_ws\install\setup.bat
     roslaunch <package> <launch file>
 
 Use the command Schtasks, to add a task which calls this script:
+
 .. code:: batch
+
     schtasks /Create /RU <User> /RP <password> /SC ONLOGON /TN ROS /TR "c:\catkin_ws\start_ros.bat"
 
 The next time the system starts, the ROS task will run.
