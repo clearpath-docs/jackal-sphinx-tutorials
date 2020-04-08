@@ -9,7 +9,7 @@
 - git:
     local-name: jackal_firmware_ms
     uri: https://github.com/jackal/jackal_firmware_ms
-    version: melodic-devel
+    version: master
 - git:
     local-name: jackal_robot
     uri: https://github.com/jackal/jackal_robot
