@@ -1,0 +1,28 @@
+- git:
+    local-name: cv_camera
+    uri: https://github.com/ms-iot/cv_camera
+    version: master
+- git:
+    local-name: nmea_msgs
+    uri: https://github.com/ros-drivers/nmea_msgs
+    version: master
+- git: 
+    local-name: geographic-info
+    uri: https://github.com/ros-geographic-info/geographic_info
+    version: master
+- git:
+    local-name: nmea_navsat_driver
+    uri: https://github.com/ros-drivers/nmea_navsat_driver
+    version: melodic-devel
+- git:
+    local-name: joystick_drivers
+    uri: https://github.com/ms-iot/joystick_drivers
+    version: init_windows
+- git:
+    local-name: robot_localization
+    uri: https://github.com/ms-iot/robot_localization
+    version: init_windows
+- git:
+    local-name: twist_mux
+    uri: https://github.com/ms-iot/twist_mux
+    version: init_windows
