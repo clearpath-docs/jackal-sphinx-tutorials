@@ -45,13 +45,19 @@ Installing Jackal software
 Once you've installed Windows and ROS, It's time to install the Jackal software. 
 
 .. code-block:: batch
+    choco install wget
+    mkdir c:\ws
+    cd c:\ws
+    wget https://raw.githubusercontent.com/jackal/jackal-sphinx-tutorials/master/jackal.rosinstall
+    wstool init src jackal.rosinstall
 
-    mkdir c:\ws\src
-    cd c:\ws\src
-    git clone https://github.com/jackal/jackal_robot
-    git clone https://github.com/jackal/jackal
-    git clone https://github.com/jackal/jackal_firmware_ms
+    rosdep update
+    rosdep install --from-paths src --ignore-src -r -y
     catkin_make
+
+.. note:: rosdep will not find several components. These include rosserial_server, robot_upstart and others.
+
+.. note:: gmapping is coming soon.
 
 .. note:: The Jackal software is distributed as sourcecode on Github, with Binary packages available at a later date. Other Clearpath repositories have not been enabled
  as of April 2020, but will be evaluated based on demand.
