@@ -23,8 +23,8 @@
     uri: https://github.com/ros-drivers/nmea_msgs
     version: master
 - git: 
-    local-name: geographic-info
-    uri: https://github.com/ros-geographic-info/geographic_info
+    local-name: unique_identifier
+    uri: https://github.com/ros-geographic-info/unique_identifier
     version: master
 - git:
     local-name: nmea_navsat_driver
@@ -42,3 +42,19 @@
     local-name: twist_mux
     uri: https://github.com/ms-iot/twist_mux
     version: init_windows
+- git:
+    local-name: twist_mux_msgs
+    uri: https://github.com/ros-teleop/twist_mux_msgs
+    version: melodic-devel
+- git:
+    local-name: interactive_marker_twist_server
+    uri: https://github.com/ros-visualization/interactive_marker_twist_server
+    version: kinetic-devel
+- git:
+    local-name: pointgrey_camera_driver
+    uri: https://github.com/ros-drivers/pointgrey_camera_driver
+    version: master
+- git:
+    local-name: rosdoc_lite
+    uri: https://github.com/ros-infrastructure/rosdoc_lite
+    version: master
