@@ -1,4 +1,20 @@
 - git:
+    local-name: jackal
+    uri: https://github.com/jackal/jackal
+    version: melodic-devel
+- git:
+    local-name: jackal_desktop
+    uri: https://github.com/jackal/jackal_desktop
+    version: melodic-devel
+- git:
+    local-name: jackal_firmware_ms
+    uri: https://github.com/jackal/jackal_firmware_ms
+    version: melodic-devel
+- git:
+    local-name: jackal_robot
+    uri: https://github.com/jackal/jackal_robot
+    version: melodic-devel
+- git:
     local-name: cv_camera
     uri: https://github.com/ms-iot/cv_camera
     version: master
