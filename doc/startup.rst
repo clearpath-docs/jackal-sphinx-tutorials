@@ -59,7 +59,3 @@ xacro) at runtime.
 
 The second, more sophisticated way to modify the URDF is to create a *new* package for your own robot, and build
 your own URDF which wraps the one provided by :roswiki:`jackal_description`.
-
-
-Putting It All Together
------------------------
