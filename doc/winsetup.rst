@@ -50,14 +50,14 @@ Once you've installed Windows and ROS, It's time to install the Jackal software.
     cd c:\ws
     wget https://raw.githubusercontent.com/jackal/jackal-sphinx-tutorials/master/jackal.rosinstall
     wstool init src jackal.rosinstall
+    
+    pip install pyproj==1.9.6
 
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
     catkin_make
 
-.. note:: rosdep will not find several components. These include rosserial_server, robot_upstart, joint_state_publisher_gui and others.
-
-.. note:: gmapping is coming soon.
+.. note:: rosdep will not find several components. These include rosserial_server, robot_upstart, joint_state_publisher_gui and others. gmapping is coming soon.
 
 .. note:: The Jackal software is distributed as sourcecode on Github, with Binary packages available at a later date. Other Clearpath repositories have not been enabled
  as of April 2020, but will be evaluated based on demand.
