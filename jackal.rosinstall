@@ -27,6 +27,10 @@
     uri: https://github.com/ros-geographic-info/unique_identifier
     version: master
 - git:
+    local-name: geographic_info
+    uri: https://github.com/ros-geographic-info/geographic_info
+    version: master
+- git:
     local-name: nmea_navsat_driver
     uri: https://github.com/ros-drivers/nmea_navsat_driver
     version: melodic-devel
@@ -50,11 +54,3 @@
     local-name: interactive_marker_twist_server
     uri: https://github.com/ros-visualization/interactive_marker_twist_server
     version: kinetic-devel
-- git:
-    local-name: pointgrey_camera_driver
-    uri: https://github.com/ros-drivers/pointgrey_camera_driver
-    version: master
-- git:
-    local-name: rosdoc_lite
-    uri: https://github.com/ros-infrastructure/rosdoc_lite
-    version: master
