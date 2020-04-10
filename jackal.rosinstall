@@ -54,3 +54,12 @@
     local-name: interactive_marker_twist_server
     uri: https://github.com/ros-visualization/interactive_marker_twist_server
     version: kinetic-devel
+- git:
+    local-name: openslam_gmapping
+    uri: https://github.com/ms-iot/openslam_gmapping
+    version: melodic-devel
+- git:
+    local-name: slam_gmapping
+    uri: https://github.com/ms-iot/slam_gmapping
+    version: melodic-devel
+  
