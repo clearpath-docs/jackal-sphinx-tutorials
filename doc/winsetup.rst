@@ -55,7 +55,7 @@ Once you've installed Windows and ROS, It's time to install the Jackal software.
 
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
-    catkin_make
+    catkin_make_isolated
 
 .. note:: rosdep will not find several components. These include rosserial_server, robot_upstart, joint_state_publisher_gui and others. gmapping is coming soon.
 
