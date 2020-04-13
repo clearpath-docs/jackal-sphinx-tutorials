@@ -37,22 +37,36 @@ In order to power the Jetson make a cable which connects to the 12V user power t
 Step 3: Installing the software
 --------------------------------
 
-`Download Jetpack <https://developer.nvidia.com/embedded/dlc/jetpack-l4t-3_3>`_ on a PC running Ubuntu 16.04.  While that's downloading, put the TX2 into reovery mode by following these steps:
+`Download the latest version of Nvidia's SDK Manager <https://developer.nvidia.com/nvidia-sdk-manager>`_ on a PC running Ubuntu 18.04.  While that's downloading, put the TX2 into reovery mode by following these steps:
 
-1. Connect the TX2 to your PC using the provided microUSB cable.
+1.  Connect the TX2 to your PC using the provided microUSB cable.
 2.  Make sure the TX2 is powered off
-3.  Press and hold the REC button
-4.  Press the power button.
+3.  Connect a monitor, mouse, and keyboard to the Jetson.  (The mouse is optional, but recommended.  If you do not have an all-in-one mouse+keyboard you will need to use a small USB hub, as the Jetson TX2 only has a single USB port.)
+4.  Press and hold the REC button
+5.  Press the power button.
 
-Then `follow Jetpack's instructions <https://docs.nvidia.com/jetson/archives/jetpack-archived/jetpack-321/index.html#jetpack/3.2.1/install.htm%3FTocPath%3D_____3>`_ to install the operatng system to the TX2.  This may take several minutes.  Make sure you select the option to flash the OS image to the target board.
+Install the SDK Manager by running the following commands:
 
-.. image:: jetpack-install.png
+.. code-block:: bash
+
+    cd <folder where you downloaded SDK manager>
+    sudo dpkg -i sdkmanager_<version>_amd64.deb
+
+.. note::
+
+    If your system is missing dependencies you may see error messages in the output of the ``dpkg`` command.  To resolve these, run ``sudo apt-get -f install``.
+
+Once SDK Manager is installed, run it with the ``sdkmanager`` command.  `Follow SDK Manager's instructions <https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html>`_ to install the operating system and Nvidia components on your Jetson TX2.  During installation you will be asked to configure the login information on the Jetson.  To do this, use the monitor & keyboard you connected before to enter the username and password you want to use.
+
+.. note::
+
+    For compatibility with older versions of the Jetson TX2 software, we recommend setting the username and password to ``nvidia``.
 
 Once the OS has been written to the TX2, log into it and run the following commands to configure it for use with Jackal:
 
 .. code-block:: bash
 
-    curl -s https://raw.githubusercontent.com/clearpathrobotics/jetson_setup/master/scripts/jetson_setup.sh | bash -s --
+    curl -s https://raw.githubusercontent.com/clearpathrobotics/jetson_setup/melodic/scripts/tx2_setup.sh | bash -s --
     bash JACKAL_SETUP.sh
 
 These commands will download and install ROS along with the necessary APT packages to get Jackal up and running.  Depending on your network speed it may take a long time for everything to install.  Reboot the TX2 after these commands are done to complete the configuration.
@@ -68,8 +82,8 @@ To use your host computer with the Jackal first `install ROS <http://wiki.ros.or
 .. code-block:: bash
 
     cd src
-    git clone https://github.com/jackal/jackal
-    git clone https://github.com/jackal/jackal_desktop.
+    git clone -b melodic-devel https://github.com/jackal/jackal
+    git clone -b melodic-devel https://github.com/jackal/jackal_desktop.
     cd ..
     rosdep install --from-paths src --ignore-src -r -y
     catkin_make
