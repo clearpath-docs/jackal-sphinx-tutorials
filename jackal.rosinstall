@@ -64,6 +64,6 @@
     version: melodic-devel
 - git:
     local-name: rosserial
-    uri: https://github.com/ros-drivers/rosserial
+    uri: https://github.com/ms-iot/rosserial
     version: melodic-devel
     
