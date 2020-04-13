@@ -75,7 +75,20 @@ When the Jetson starts up again, it should be connected to the Jackal. To see th
 
 Your Jetson TX2 should now be configured to operate as the Jackal's main PC.  See :doc:`Extending Jackal Startup <startup>` for more on how to configure Jackal's accessories.
 
-If you would like to pair a PS4 controller to drive the Jackal, hold down the PS and Share buttons on the controller until the light bar starts to flash. In a terminal on the Jackal, run ``sudo ds4drv-pair`` and wait for the controller to connect.  With the controller paired you should be able to control the Jackal by pressing L1 and using the left stick to drive. For more information see the Jackal manual.
+If you would like to pair a PS4 controller to drive the Jackal, hold down the PS and Share buttons on the controller until the light bar starts to flash. In a terminal on the Jackal, run ``bluetoothctl`` and then run the following commands:
+
+.. code-block:: text
+
+    agent on
+    scan on
+    < look for the MAC address of your controller; it will be identified by "Wireless Controller" or similar text >
+    scan off
+    pair <MAC ADDRESS>
+    trust <MAC ADDRESS>
+    connect <MAC ADDRESS>
+    < ctrl + d to exit >
+
+The light on the controller will turn solid blue once it is paired. With the controller paired you should be able to control the Jackal by pressing L1 and using the left stick to drive. For more information see the Jackal manual.
 
 To use your host computer with the Jackal first `install ROS <http://wiki.ros.org/|ros_distro|/Installation>`_ and `setup a catkin workspace <http://wiki.ros.org/catkin/Tutorials/create_a_workspace>`_. Clone the general Jackal repo and the desktop specific repo in to the src folder and compile them, installing rosdeps if necessary:
 
