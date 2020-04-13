@@ -45,6 +45,7 @@ Installing Jackal software
 Once you've installed Windows and ROS, It's time to install the Jackal software. 
 
 .. code-block:: batch
+
     choco install wget
     mkdir c:\ws
     cd c:\ws
