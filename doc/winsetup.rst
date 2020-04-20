@@ -46,12 +46,16 @@ Once you've installed Windows and ROS, It's time to install the Jackal software.
 
 .. code-block:: batch
 
+    :: Only need to install wget once.
     choco install wget
+    :: Close and Reopen the command Window.
+    
     mkdir c:\ws
     cd c:\ws
     wget https://raw.githubusercontent.com/jackal/jackal-sphinx-tutorials/master/jackal.rosinstall
     wstool init src jackal.rosinstall
     
+    :: Later versions of pyproj are not deployed as a binary and do not build automatically
     pip install pyproj==1.9.6
 
     rosdep update
