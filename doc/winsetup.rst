@@ -42,7 +42,7 @@ If you have Windows specific questions or problems, Microsoft offers `community 
 Installing Jackal software
 --------------------------
 
-Once you've installed Windows and ROS, It's time to install the Jackal software. 
+Once you've installed Windows and ROS, It's time to install the Jackal software. Please open an Administrative ROS command prompt created during the ROS install.
 
 .. code-block:: batch
 
@@ -61,11 +61,11 @@ Once you've installed Windows and ROS, It's time to install the Jackal software.
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
     catkin_make_isolated
+    devel_isolated\setup.bat
 
 .. note:: rosdep will not find several components. These include rosserial_server, robot_upstart, joint_state_publisher_gui and others. gmapping is coming soon.
 
-.. note:: The Jackal software is distributed as sourcecode on Github, with Binary packages available at a later date. Other Clearpath repositories have not been enabled
- as of April 2020, but will be evaluated based on demand.
+.. note:: The Jackal ROS Nodes and support software is distributed as source code on Github. Other Clearpath repositories have not been enabled as of April 2020, but will be evaluated based on demand.
 
 MCU Firmware Update
 -------------------
@@ -87,8 +87,10 @@ Now, from Jackal's PC (connected via Windows Remote Desktop or screen/keyboard),
 .. code-block:: batch
 
     cd c:\ws
-    devel\setup.bat
+    devel_isolated\setup.bat
     rosrun jackal_firmware_ms scripts/upload.bat
+    
+During execution of the script, it will display a dialog. Please follow the instructions in the command window.
 
 You should see about 20 seconds worth of lines output beginning with "Download from image ...". When this is
 complete, move the switch back to the leftmost position and quickly push the reset button again. You're now
@@ -133,8 +135,7 @@ You'll need to ensure that this joystick ROS node is started by your launch file
 .. code-block:: batch
 
     cd c:\ws
-    devel\setup.bat
+    devel_isolated\setup.bat
     git clone -b init_windows https://github.com/ms-iot/joystick_drivers
     catkin_make
-
 
