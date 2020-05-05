@@ -1,9 +1,9 @@
 jackal_description Package
 ===========================
 
-The jackal_description package is the URDF robot description for Jackal UGV. 
+The jackal_description package is the URDF robot description for Jackal UGV.
 
-.. _Source: https://github.com/jackal/jackal 
+.. _Source: https://github.com/jackal/jackal
 
 
 Overview
@@ -11,10 +11,10 @@ Overview
 
 This package provides a `URDF <http://wiki.ros.org/urdf>`_ model of Jackal.  For an example launchfile to use in visualizing this model, see `jacakl_viz <http://wiki.ros.org/jackal_viz>`_.
 
-.. image:: jackal-urdf.png
+.. image:: images/jackal-urdf.png
 
 
-Accessories 
+Accessories
 ------------
 
 Jackal has a suite of optional payloads called accessories. These payloads can be enabled and placed on Jackal using environment variables specified at the time the `xacro <http://wiki.ros.org/xacro>`_ is rendered to URDF. Available accessory vars are:
@@ -128,9 +128,9 @@ As an alternative to individually specifying each accessory, some fixed configur
 Config:                               Description:
 ====================================  ====================================================
 base                                  Base Jackal, includes IMU and GPS
-front_laser                           Include front-facing LMS1xx LIDAR. 
+front_laser                           Include front-facing LMS1xx LIDAR.
 front_bumblebee2                      Includes front-facing Pointgrey Bumblebee2
 front_flea3                           Includes front-facing Pointgrey Flea3
 ====================================  ====================================================
 
-Please see `jackal_simulator <http://wiki.ros.org/jackal_simulator>`_ for more information on simulating Jackal. 
+Please see `jackal_simulator <http://wiki.ros.org/jackal_simulator>`_ for more information on simulating Jackal.
