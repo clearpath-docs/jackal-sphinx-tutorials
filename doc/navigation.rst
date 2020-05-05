@@ -39,7 +39,7 @@ To visualize with the suggested rviz configuration launch:
 
     roslaunch jackal_viz view_robot.launch config:=navigation
 
-.. image:: rviz-odom-navigation.png
+.. image:: images/rviz-odom-navigation.png
     :alt: rviz with Jackal's odom navigation configuration.
 
 To send goals to the robot, select the *2D Nav Goal* tool from the top toolbar, and then click anywhere in the rviz
@@ -64,7 +64,7 @@ And on your workstation, launch rviz with the suggested configuration:
 
     roslaunch jackal_viz view_robot.launch config:=gmapping
 
-.. image:: rviz-gmapping.png
+.. image:: images/rviz-gmapping.png
     :alt: rviz with Jackal's gmapping configuration.
 
 You must slowly drive Jackal around to build the map. As obstacles come into view of the laser scanner, they will be

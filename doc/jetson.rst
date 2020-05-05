@@ -10,27 +10,27 @@ Step 1: Remove mini-ITX Computer
 
 If you have a mini-ITX computer installed it will need to be removed. With the computer tray open locate each of the cables connected to the motherboard and harddrive. Remove the power, power switch, USB and SATA cables. The two cable ties can be cut to completely remove the power and SATA cables. The two antenna cables are connected underneath. Keep this in mind for the next steps.
 
-.. image:: img1.JPG
+.. image:: images/img1.JPG
 
 Remove the four (4) hex screws from the motherboard using a 2.5mm wrench. Gently lift it out disconnecting the antenna connectors as you do so.
 
-.. image:: img2.JPG
+.. image:: images/img2.JPG
 
 Remove the zipties holding the USB header, power switch signal and antenna wire. The Jetson TX2 doesn't have a USB header so it will have to be replaced with a USB mini cable. You will need extra slack in both the antenna cable and power switch signal as well.
 
-.. image:: img3.JPG
+.. image:: images/img3.JPG
 
 Step 2: Install the TX2
 ------------------------
 Install the Jetson TX2 using M3 screws or the screws removed from the computer. The holes will only line up in one orientation. Plug a USB mini cable from the Jetson to the Jackal MCU board.
 
-.. image:: img4.JPG
+.. image:: images/img4.JPG
 
 This is beside where the USB header was removed if you had a computer. We recommend using a USB hub to increase the number of connected devices.  Plug the power switch cable into the power switch header (J6). If you wish to use the antenna cables attached to the Jackal remove the U.FL connectors from the Jetson module and connect the antenna cables. Caution: Take your time with this step the UF.L connectors are fragile.  If you wish not to disconnect the UF.L cables you can replace the antenna mounts on the Jackal with SMA extensions.
 
 In order to power the Jetson make a cable which connects to the 12V user power to a barrel connector with center positive. Refer to the Jackal manual for the pinout of the user power. We used one of the molex user power connectors.
 
-.. image:: img5.JPG
+.. image:: images/img5.JPG
 
 **Warning:** Make sure not to plug this into the ITX power plug on the power distribution board.
 
@@ -46,7 +46,7 @@ Step 3: Installing the software
 
 Then `follow Jetpack's instructions <https://docs.nvidia.com/jetson/archives/jetpack-archived/jetpack-321/index.html#jetpack/3.2.1/install.htm%3FTocPath%3D_____3>`_ to install the operatng system to the TX2.  This may take several minutes.  Make sure you select the option to flash the OS image to the target board.
 
-.. image:: jetpack-install.png
+.. image:: images/jetpack-install.png
 
 Once the OS has been written to the TX2, log into it and run the following commands to configure it for use with Jackal:
 

@@ -11,7 +11,7 @@ Overview
 
 This package provides a `URDF <http://wiki.ros.org/urdf>`_ model of Jackal.  For an example launchfile to use in visualizing this model, see `jacakl_viz <http://wiki.ros.org/jackal_viz>`_.
 
-.. image:: jackal-urdf.png
+.. image:: images/jackal-urdf.png
 
 
 Accessories 

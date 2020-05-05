@@ -1,7 +1,7 @@
 Jackal UGV Tutorials
 ======================
 
-.. image:: jackal_banner.png
+.. image:: images/jackal_banner.png
     :alt: Jackal Robot
 
 This package supplies Sphinx-based tutorial content to assist you with setting up and operating your Jackal_

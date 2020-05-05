@@ -31,7 +31,7 @@ Jackal in a simple example world, run the following command:
 You should see the following window appear, or something like it. You can adjust the camera angle by
 clicking and dragging while holding CTRL, ALT, or the shift key:
 
-.. image:: gazebo-jackal-race.png
+.. image:: images/gazebo-jackal-race.png
     :alt: Simulated Jackal in the Race World.
 
 The window which you are looking at is the Gazebo Client. This window shows you the "true" state of the
@@ -50,7 +50,7 @@ CTRL-C out of the terminal process, you can re-launch the simulator with a speci
 
 You should now see the simulator running with the simulated SICK LMS111 laser present:
 
-.. image:: gazebo-jackal-race-laser.png
+.. image:: images/gazebo-jackal-race-laser.png
     :alt: Simulated Jackal in the Race World with SICK LMS111.
 
 Gazebo not only simulates the physical presence of the laser scanner, it also provides simulated data
@@ -75,7 +75,7 @@ visualizing any standard Jackal config:
 
 You should see rviz appear:
 
-.. image:: rviz-jackal-laser.png
+.. image:: images/rviz-jackal-laser.png
     :alt: Jackal with laser scanner in rviz.
 
 The rviz display only shows what the robot knows about its world, which presently, is nothing. Because the
@@ -108,12 +108,12 @@ us clues as to what the robot is doing and why. A great place to start with this
 simulated LMS111. In the left panel, click the "Add" button, then select the "Topics" tab, and then select the
 ``front/scan`` topic:
 
-.. image:: rviz-visualize-laser.png
+.. image:: images/rviz-visualize-laser.png
     :alt: Adding a laser scan visualization to Jackal.
 
 Click OK, and you should see laser scan points now visible in the rviz window, relative to the robot:
 
-.. image:: rviz-laser-scan.png
+.. image:: images/rviz-laser-scan.png
     :alt: Visualizing Jackal with simulated laser scans.
 
 If you use the interactive markers to drive around, you'll notice that the laser scan points move a little bit
