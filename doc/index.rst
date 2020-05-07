@@ -35,8 +35,15 @@ skip the introductory chapters and jump straight to these ones.
     startup
     calibration
     update
-    jetson
     cartographer
+
+.. toctree::
+    :maxdepth: 0
+    :caption: NVIDIA Jetson
+
+    jetson_tx2
+    jetson_nano
+    jetson_xavier
 
 .. toctree::
     :titlesonly:
