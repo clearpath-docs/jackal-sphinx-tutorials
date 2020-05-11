@@ -1,9 +1,9 @@
 [submodule "doc/theme"]
 	path = doc/theme
-	url = http://gitlab.clearpathrobotics.com/research/clearpath-sphinx-theme.git
+	url = https://github.com/clearpath-docs/clearpath-sphinx-theme.git
 [submodule "clearpath-sphinx-theme"]
 	path = clearpath-sphinx-theme
-	url = http://gitlab.clearpathrobotics.com/research/clearpath-sphinx-theme.git
+	url = https://github.com/clearpath-docs/clearpath-sphinx-theme.git
 [submodule "latex/clearpath-latex"]
 	path = latex/clearpath-latex
 	url = https://github.com/clearpathrobotics/clearpath-latex.git
