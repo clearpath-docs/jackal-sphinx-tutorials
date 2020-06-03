@@ -94,10 +94,37 @@ If your PS4 controller runs out of batteries, or you purchase a new one, you mig
 and controller. To do this, put the controller into pairing mode by pressing and holding the Share & PS buttons
 until the controller's LED flashes rapidly in white.  Then SSH into the robot and run
 
-.. code-block:: bash
+To pair the PS4 controller with the robot, run the ``sudo bluetoothctl`` command on the robot, put the controller in pairing
+mode by pressing and holding the Share and PS buttons, and enter the following sub-commands:
 
-    sudo ds4drv-pair
+.. code-block:: text
 
-Once the pairing is complete you should be able to control the robot using your controller.  Note that the first time
-you pair the controller it may be enumerated as the wrong device.  If the robot does not respond to your commands,
-power-cycle the full system and you should be set.
+	agent on
+	scan on
+
+The bluetooth scan will display the MAC addresses of nearby devices.  Determine with MAC address corresponds to the
+controller and copy it.  Then run the following commands in bluetoothctl:
+
+.. code-block:: text
+
+	scan off
+	pair <MAC Address>
+	trust <MAC Address>
+	connect <MAC Address>
+
+The controller should now be correctly paired.
+
+Teleoperation
+-------------------
+
+To enable the controller you must hold down either the left or right shoulder buttons on the controller (L1 and R1 on
+the PS4 controller.  The left button is for normal operation, while the right button enables turbo speed.
+
+.. warning::
+
+	When familiarizing yourself with Jackal's operation, always hold the left button (L1).  Once you are comfortable
+	with how Jackal operates, and you are in a large area with plenty of open room, then you can use R1 to enable
+	turbo mode.
+
+Once the controller is paired, you can use the left thumb-stick to drive the robot.  The vertical axis controls
+the robot's speed and the horizontal axis controls the robot's turning.
