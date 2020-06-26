@@ -27,15 +27,30 @@ skip the introductory chapters and jump straight to these ones.
 .. toctree::
     :titlesonly:
     :hidden:
-    :caption: Getting Started
+    :caption: Using Clearpath Jackal
 
     Overview <self>
+
+.. toctree::
+    :titlesonly:
+    :hidden:
+    :caption: Getting Started with Linux
+
     simulation
     network
     navigation
     startup
     calibration
     update
+
+.. toctree::
+    :titlesonly:
+    :hidden:
+    :caption: Getting Started with Windows
+
+    winsetup
+    winstartup
+    wincalibration
 
 .. toctree::
     :titlesonly:
