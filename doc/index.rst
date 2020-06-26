@@ -30,9 +30,15 @@ skip the introductory chapters and jump straight to these ones.
 .. toctree::
     :titlesonly:
     :hidden:
-    :caption: Getting Started
+    :caption: Using Clearpath Jackal
 
     Overview <self>
+
+.. toctree::
+    :titlesonly:
+    :hidden:
+    :caption: Getting Started with Linux
+
     simulation
     network
     navigation
@@ -48,6 +54,15 @@ skip the introductory chapters and jump straight to these ones.
     jetson_tx2
     jetson_nano
     jetson_xavier
+
+.. toctree::
+    :titlesonly:
+    :hidden:
+    :caption: Getting Started with Windows
+
+    winsetup
+    winstartup
+    wincalibration
 
 .. toctree::
     :titlesonly:

@@ -1,0 +1,69 @@
+- git:
+    local-name: jackal
+    uri: https://github.com/jackal/jackal
+    version: melodic-devel
+- git:
+    local-name: jackal_desktop
+    uri: https://github.com/jackal/jackal_desktop
+    version: melodic-devel
+- git:
+    local-name: jackal_firmware_ms
+    uri: https://github.com/jackal/jackal_firmware_ms
+    version: master
+- git:
+    local-name: jackal_robot
+    uri: https://github.com/jackal/jackal_robot
+    version: melodic-devel
+- git:
+    local-name: cv_camera
+    uri: https://github.com/ms-iot/cv_camera
+    version: master
+- git:
+    local-name: nmea_msgs
+    uri: https://github.com/ros-drivers/nmea_msgs
+    version: master
+- git: 
+    local-name: unique_identifier
+    uri: https://github.com/ros-geographic-info/unique_identifier
+    version: master
+- git:
+    local-name: geographic_info
+    uri: https://github.com/ros-geographic-info/geographic_info
+    version: master
+- git:
+    local-name: nmea_navsat_driver
+    uri: https://github.com/ros-drivers/nmea_navsat_driver
+    version: melodic-devel
+- git:
+    local-name: joystick_drivers
+    uri: https://github.com/ms-iot/joystick_drivers
+    version: init_windows
+- git:
+    local-name: robot_localization
+    uri: https://github.com/ms-iot/robot_localization
+    version: init_windows
+- git:
+    local-name: twist_mux
+    uri: https://github.com/ms-iot/twist_mux
+    version: init_windows
+- git:
+    local-name: twist_mux_msgs
+    uri: https://github.com/ros-teleop/twist_mux_msgs
+    version: melodic-devel
+- git:
+    local-name: interactive_marker_twist_server
+    uri: https://github.com/ros-visualization/interactive_marker_twist_server
+    version: kinetic-devel
+- git:
+    local-name: openslam_gmapping
+    uri: https://github.com/ms-iot/openslam_gmapping
+    version: melodic-devel
+- git:
+    local-name: slam_gmapping
+    uri: https://github.com/ms-iot/slam_gmapping
+    version: melodic-devel
+- git:
+    local-name: rosserial
+    uri: https://github.com/ros-drivers/rosserial
+    version: melodic-devel
+    
