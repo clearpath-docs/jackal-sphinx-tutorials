@@ -11,7 +11,7 @@ mobile robot. The tutorials topics are listed in the left column, and presented 
 
 .. Warning::
   These tutorials assume that you are comfortable working with ROS.  We recommend starting with our
-  `ROS tutorial <http:/../ros>`_ if you are not familiar with ROS already.
+  `ROS tutorial <./../ros>`_ if you are not familiar with ROS already.
 
 :doc:`Simulation <simulation>` is a logical place for most users to start, as this is universally applicable;
 understanding how to effectively operate Jackal in simulation is valuable whether you are in the testing
