@@ -14,8 +14,7 @@ First Connection
 
 By default, Jackal's wireless is in client mode, looking for the wireless network at the Clearpath factory. In
 order to set it up to connect to your own network, you'll have to open up the chassis and connect a network cable to
-the PC's ``STATIC`` port. The other end of this cable should be connected to your laptop, and you should give yourself an IP address in the ``192.168.1.x`` space, such as ``192.168.1.50``. Then, make the connection to Jackal's default
-static IP:
+the PC's ``STATIC`` port. The other end of this cable should be connected to your laptop, and you should give yourself an IP address in the ``192.168.131.x`` space, such as ``192.168.131.50``. Then, make the connection to Jackal's default static IP:
 
 .. code-block:: bash
 
