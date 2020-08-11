@@ -200,7 +200,7 @@ before launching the simulation world.
 You can also add additional sensors by creating a customized URDF and setting the ``JACKAL_URDF_EXTRAS`` environment
 variable to point to it.
 
-For example, let's suppose you want to equip Jackal with an Intel RealSense D430 camera.  First, install the ``realsense2_camera``
+For example, let's suppose you want to equip Jackal with an Intel RealSense D435 camera.  First, install the ``realsense2_camera``
 and ``realsense2_description`` packages, along with the gazebo plugins:
 
 .. code-block:: bash
