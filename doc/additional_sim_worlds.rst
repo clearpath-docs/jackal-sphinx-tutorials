@@ -2,6 +2,7 @@ Additional Simulation Worlds
 ================================
 
 In addtion to the default ``jackal_world.launch`` file, ``jackal_gazebo`` contains three additional launch files:
+
 * ``empty_world.launch``, which spawns Jackal in a featureless, infinite plane;
 * ``hrtac_world.launch``, which is a scenario from the HRTAC_ competition; and
 * ``spawn_jackal.launch``, which is intended to be included in any custom world to add a Jackal simulation to it.
