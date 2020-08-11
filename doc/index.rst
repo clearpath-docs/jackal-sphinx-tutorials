@@ -55,3 +55,4 @@ skip the introductory chapters and jump straight to these ones.
     :caption: Jackal Packages
 
     description
+    additional_sim_worlds
