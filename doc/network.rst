@@ -22,6 +22,28 @@ the PC's ``STATIC`` port. The other end of this cable should be connected to you
 
 The default password is ``clearpath``. You should now be logged into Jackal as the administrator user.
 
+Changing the Default Password
+-----------------------------
+
+.. Warning::
+
+  All Clearpath robots ship from the factory with their login password set to ``clearpath``.  Upon receipt of your
+  robot we `strongly` recommend changing the password.
+
+To change the password to log into your robot, run the
+
+.. code-block:: bash
+
+  passwd
+
+command.  This will prompt you to enter the current password, followed by the new password twice.  While typing the
+passwords in the ``passwd`` prompt there will be no visual feedback (e.g. "*" characters).
+
+To further restrict access to your robot you can reconfigure the robot's SSH service to disallow logging in with a
+password and require SSH certificates to log in.  This_ tutorial covers how to configure SSH to disable password-based
+login.
+
+.. _This: https://linuxize.com/post/how-to-setup-passwordless-ssh-login/
 
 Connecting to Wifi Access Point
 --------------------------------
