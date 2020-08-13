@@ -25,10 +25,10 @@ The default password is ``clearpath``. You should now be logged into Jackal as t
 Changing the Default Password
 -----------------------------
 
-.. Warning::
+.. Note::
 
   All Clearpath robots ship from the factory with their login password set to ``clearpath``.  Upon receipt of your
-  robot we `strongly` recommend changing the password.
+  robot we recommend changing the password.
 
 To change the password to log into your robot, run the
 
