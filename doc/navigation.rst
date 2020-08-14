@@ -58,6 +58,11 @@ In this demonstration, Jackal generates a map using gmapping. Begin by launch th
 
     roslaunch jackal_navigation gmapping_demo.launch
 
+.. Note::
+
+  If your robot's lidar does not publish on ``/front/scan`` you can specify the correct topic by setting the
+  ``scan_topic`` argument: ``scan_topic:=my_scan_topic``
+
 And on your workstation, launch rviz with the suggested configuration:
 
 .. code-block:: bash
@@ -94,6 +99,11 @@ To start the AMCL demo:
 
     roslaunch jackal_navigation amcl_demo.launch map_file:=/path/to/my/map.yaml
 
+.. Note::
+
+  If your robot's lidar does not publish on ``/front/scan`` you can specify the correct topic by setting the
+  ``scan_topic`` argument: ``scan_topic:=my_scan_topic``
+
 If you don't specify ``map_file``, it defaults to an included pre-made map of the default "Jackal Race"
 environment which Jackal's simulator spawns in. If you're using a real Jackal in your own environment,
 you'll definitely want to override this with the map created using the gmapping demo.
@@ -118,4 +128,3 @@ may be a good fit for your team. Please `get in touch for more details`__.
 
 .. _contact: http://www.clearpathrobotics.com/contact/
 __ contact_
-
