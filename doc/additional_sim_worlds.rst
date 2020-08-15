@@ -36,7 +36,7 @@ environments our robots are designed to operate in:
 * Inspection World: a hilly outdoor world with water and a cave
 * Agriculture World: a flat outdoor world with a barn, fences, and solar farm
 * Office World: a flat indoor world with enclosed rooms and furniture
-* Construction World: office world, under construction with small piles of debiris and partial walls
+* Construction World: office world, under construction with small piles of debris and partial walls
 
 Jackal is supported in all four environments.
 
