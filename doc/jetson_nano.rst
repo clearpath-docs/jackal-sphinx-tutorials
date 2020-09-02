@@ -97,6 +97,10 @@ Once the OS has been written to the Nano, log into it and run the following comm
     curl -s https://raw.githubusercontent.com/clearpathrobotics/jetson_setup/melodic/scripts/nano_setup.sh | bash -s --
     bash JACKAL_SETUP.sh
 
+.. note::
+
+    If ``curl`` is not installed on your Jetson by default you can install it by running ``sudo apt-get install curl``
+
 .. image:: images/Nano/Software/9.png
 
 These commands will download and install ROS along with the necessary APT packages to get Jackal up and running.  Depending on your network speed it may take a long time for everything to install.  Reboot the Nano after these commands are done to complete the configuration.
