@@ -55,6 +55,10 @@ Once the OS has been written to the TX2, log into it and run the following comma
     curl -s https://raw.githubusercontent.com/clearpathrobotics/jetson_setup/master/scripts/jetson_setup.sh | bash -s --
     bash JACKAL_SETUP.sh
 
+.. note::
+
+    If ``curl`` is not installed on your Jetson by default you can install it by running ``sudo apt-get install curl``
+
 These commands will download and install ROS along with the necessary APT packages to get Jackal up and running.  Depending on your network speed it may take a long time for everything to install.  Reboot the TX2 after these commands are done to complete the configuration.
 
 When the Jetson starts up again, it should be connected to the Jackal. To see that the Jackal is connected by opening a terminal and executing "rostopic echo /status". You should see a 1hz message containing the Jackal's diagnostic information.
