@@ -1,5 +1,5 @@
-Installing a Jetson Xavier
-==========================
+Installing a Jetson Xavier AGX
+==============================
 
 Start by opening up the Jackal to reveal the computer tray. Use the lever on the front of the Jackal then the thumb screws on the lid. For more instructions refer to the `Jackal User's Manual <http://bit.ly/1f4hmqP>`_.
 
@@ -52,7 +52,7 @@ Step 3: Installing the Software
 
 `Download the latest version of Nvidia's SDK Manager <https://developer.nvidia.com/nvidia-sdk-manager>`_ on a PC running Ubuntu 18.04.  While that's downloading, put the Xavier into reovery mode by following these steps:
 
-1.  Connect the Xavier to your PC using the provided microUSB cable.
+1.  Use the included USB cable to connect the Linux host computer to the front USB Type-C connector on the developer kit.
 2.  Make sure the Xavier is powered off
 3.  Connect a monitor, mouse, and keyboard to the Jetson.  (The mouse is optional, but recommended.  If you do not have an all-in-one mouse+keyboard you will need to use a small USB hub, as the Jetson Xavier only has a single USB port.)
 4.  Press and hold the REC button
