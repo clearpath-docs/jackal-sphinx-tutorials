@@ -16,7 +16,7 @@ The standard system-wide setup file is in ``opt``:
 
 .. code:: bash
 
-    source /opt/ros/|ros_distro|/setup.bash
+    source /opt/ros/melodic/setup.bash
 
 When you run this command, you'll have access to `rosrun`, `roslaunch`, and all the other tools and packages
 installed on your system from debian packages.
@@ -39,7 +39,7 @@ modification points for altering how Jackal launches.
 Launch Files
 ------------
 
-The second major modification point is the ``/etc/ros/|ros_distro|/ros.d`` directory. This location contains the
+The second major modification point is the ``/etc/ros/melodic/ros.d`` directory. This location contains the
 launch files associated with the ``ros`` background job. If you add launch files here, they will be launched with
 Jackal's startup.
 
