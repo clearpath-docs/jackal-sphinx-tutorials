@@ -196,3 +196,13 @@ If you would like to pair a PS4 controller to drive the Jackal, hold down the PS
 To use your host computer with the Jackal first install ROS (http://wiki.ros.org/melodic/Installation) and setup a catkin workspace (http://wiki.ros.org/catkin/Tutorials/create_a_workspace). Clone the general Jackal repo and the desktop specific repo in to the src folder and compile it. Installing rosdeps if necessary with "rosdep install --from-paths src --ignore-src -r -y". https://github.com/jackal/jackal and https://github.com/jackal/jackal_desktop. Note the network ip of the Xavier and setup your host computer to use it as the master. http://wiki.ros.org/ROS/Tutorials/MultipleMachines
 
 You can then run "roslaunch jackal_viz view_robot.launch" on your host machine.  You should see a model of the robot and be able to move the Jackal using the interactive markers. See: http://www.clearpathrobotics.com/assets/guides/jackal/navigation.html
+
+
+Enabling Automatic Power-On
+-----------------------------------
+
+We recommend configuring the Jetson to automatically boot when it receives power. To enable automatic power-on, connect pins 5 and 6 of the J508 header on the Jetson:
+
+.. image::
+  images/xavier-auto-power-on.png
+  :alt: Xavier J508 header
