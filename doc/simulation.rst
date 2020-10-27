@@ -98,6 +98,42 @@ Once you start your own development, have your nodes send ``geometry_msgs/Twist`
 topic to drive Jackal, either real or simulated. This is the standard ROS interface to differential-drive and
 holonomic ground vehicles.
 
+You can also use a game controller to drive your robot.  To launch the teleop node, run
+
+.. code-block:: bash
+
+  roslaunch jackal_control teleop.launch joy_dev:=/dev/input/js0
+
+Replace ``/dev/input/js0`` with the joy device you wish to use as input.  By default ``jackal_control`` accepts input
+from ``/dev/input/ps4`` unless another device is specified.  If you use a PS4 controller, you can add the following udev
+rule to automatically symlink your js* device to ``/dev/input/ps4``:
+
+.. code-block:: bash
+
+  KERNEL=="js*", SUBSYSTEM=="input", ATTRS{name}=="Wireless Controller", MODE="0666", SYMLINK+="input/ps4"
+
+Put the above in ``/etc/udev/rules.d/41-playstation.rules`` and then run
+
+.. code-block:: bash
+
+  sudo udevadm control --reload-rules
+  sudo udevadm trigger
+
+If you use a different game controller, e.g. an Xbox controller or Logitech F710 you will need to specify the device
+using the ``joy_dev:=/dev/input/js*`` argument, described earlier.
+
+Regardless of the controller, Axis 0 controls the robot's steering, Axis 1 controls the forward/backward velocity,
+and buttons 4 and 5 act as enable & enable-turbo respectively.  On common controllers these correspond to the following
+physical controls:
+
+============= ==================================== ===== ===== =========
+Axis/Button   Physical Input                       PS4   F710  Xbox One
+============= ==================================== ===== ===== =========
+Axis 0        Left thumb stick horizontal          LJ    LJ    LJ
+Axis 1        Left thumb stick vertical            LJ    LJ    LJ
+Button 4      Left shoulder button or trigger      L1    LB    LB
+Button 5      Right shoulder button or trigger     R1    RB    RB
+============= ==================================== ===== ===== =========
 
 Visualizing Sensors
 -------------------
