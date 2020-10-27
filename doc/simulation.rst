@@ -98,7 +98,8 @@ Once you start your own development, have your nodes send ``geometry_msgs/Twist`
 topic to drive Jackal, either real or simulated. This is the standard ROS interface to differential-drive and
 holonomic ground vehicles.
 
-You can also use a game controller to drive your robot.  To launch the teleop node, run
+You can also use a game controller to drive your robot.  Connect your controller using either a USB cable or Bluetooth
+as appropriate and then launch the teleop node by running:
 
 .. code-block:: bash
 
