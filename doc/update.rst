@@ -94,23 +94,27 @@ If your PS4 controller runs out of batteries, or you purchase a new one, you mig
 and controller. To do this, put the controller into pairing mode by pressing and holding the Share & PS buttons
 until the controller's LED flashes rapidly in white.  Then SSH into the robot and run
 
-To pair the PS4 controller with the robot, run the ``sudo bluetoothctl`` command on the robot, put the controller in pairing
-mode by pressing and holding the Share and PS buttons, and enter the following sub-commands:
+.. code-block:: bash
+
+  sudo ds4drv-pair
+
+If ``ds4drv-pair`` fails to detect the controller, you can connect it manually by running ``sudo bluetoothctl``
+and entering the following commands into the bluetooth control application:
 
 .. code-block:: text
 
-	agent on
-	scan on
+  agent on
+  scan on
 
 The bluetooth scan will display the MAC addresses of nearby devices.  Determine with MAC address corresponds to the
 controller and copy it.  Then run the following commands in bluetoothctl:
 
 .. code-block:: text
 
-	scan off
-	pair <MAC Address>
-	trust <MAC Address>
-	connect <MAC Address>
+  scan off
+  pair <MAC Address>
+  trust <MAC Address>
+  connect <MAC Address>
 
 The controller should now be correctly paired.
 
