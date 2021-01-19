@@ -27,7 +27,11 @@ Jackal has a suite of optional payloads called accessories. These payloads can b
     </tr>
     <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER</tt> </p></td>
       <td><p><tt>0</tt> </p></td>
-      <td><p>Enable primary laser scanner. </p></td>
+      <td><p>Enable primary laser scanner. By default this is a Sick LMS1xx, unless <tt>JACKAL_LASER_HOKUYO</tt> is set.</p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_HOKUYO</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Changes the primary laser scanner from a Sick LMS1xx to a Hokuyo UST-10.</p></td>
     </tr>
     <tr>  <td><span class="anchor" id="line-12"></span><p><tt>JACKAL_LASER_MOUNT</tt> </p></td>
       <td><p><tt>front</tt> </p></td>
@@ -42,8 +46,44 @@ Jackal has a suite of optional payloads called accessories. These payloads can b
       <td><p>RPY offset from the mount (eg, to face it backward). </p></td>
     </tr>
     <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_LASER_HOST</tt> </p></td>
-      <td><p><tt>192.168.1.14</tt> </p></td>
-      <td><p>IP address of real scanner (used by <a href="http://wiki.ros.org/jackal_bringup">jackal_bringup</a>) </p></td>
+      <td><p><tt>192.168.1.20</tt> </p></td>
+      <td><p>IP address of main lidar (used by <a href="http://wiki.ros.org/jackal_bringup">jackal_bringup</a>) </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_FRONT_ACCESSORY_FENDER</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Enable the front accessory fender</p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_FRONT_FENDER_UST10</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Enable a Hokuyo UST-10 lidar on the front accessory fender.  Requires <tt>JACKAL_FRONT_ACCESSORY_FENDER</tt> to be <tt>1</tt></p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_FRONT_LASER_TOPIC</tt> </p></td>
+      <td><p><tt>front/scan</tt> </p></td>
+      <td><p>The topic for the front-facing UST-10 lidar.  Requires <tt>JACKAL_FRONT_FENDER_UST10</tt> to be <tt>1</tt></p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_FRONT_LASER_TOPIC</tt> </p></td>
+      <td><p><tt>front/scan</tt> </p></td>
+      <td><p>The topic for the front-facing UST-10 lidar.  Requires <tt>JACKAL_FRONT_FENDER_UST10</tt> to be <tt>1</tt></p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_FRONT_LASER_HOST</tt> </p></td>
+      <td><p><tt>192.168.131.20</tt> </p></td>
+      <td><p>IP address of the front-facing UST-10 lidar</p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_REAR_ACCESSORY_FENDER</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Enable the rear accessory fender</p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_REAR_FENDER_UST10</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Enable a Hokuyo UST-10 lidar on the rear accessory fender.  Requires <tt>JACKAL_REAR_ACCESSORY_FENDER</tt> to be <tt>1</tt></p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_REAR_LASER_TOPIC</tt> </p></td>
+      <td><p><tt>rear/scan</tt> </p></td>
+      <td><p>The topic for the rear-facing UST-10 lidar.  Requires <tt>JACKAL_REAR_FENDER_UST10</tt> to be <tt>1</tt></p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_REAR_LASER_HOST</tt> </p></td>
+      <td><p><tt>192.168.131.21</tt> </p></td>
+      <td><p>IP address of the rear-facing UST-10 lidar</p></td>
     </tr>
     <tr>  <td><span class="anchor" id="line-16"></span><p><tt>JACKAL_NAVSAT</tt> </p></td>
       <td><p><tt>0</tt> </p></td>
@@ -118,6 +158,23 @@ Jackal has a suite of optional payloads called accessories. These payloads can b
       <td><p>The serial of the camera which is used for determining the calibration file name. </p></td>
     </tr>
     </tbody></table>
+
+Accessory Fenders
+------------------
+
+Jackal can optionally include extended front and rear fenders for mounting accessories.  Normally these are used
+for mounting dedicated front and rear laser scanners, but may be used for mounting other payloads.
+
+|no_fender| |with_fender|
+
+.. |no_fender| image:: images/jackal_front_standard.png
+   :width: 45%
+
+.. |with_fender| image:: images/jackal_front_fender.png
+   :width: 45%
+
+If your Jackal includes fenders on the front and/or rear, make sure to set ``JACKAL_FRONT_ACCESSORY_FENDER`` and/or
+``JACKAL_REAR_ACCESSORY_FENDER`` as necessary.
 
 Configurations
 ----------------
