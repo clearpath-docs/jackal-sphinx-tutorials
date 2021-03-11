@@ -27,11 +27,18 @@ Jackal has a suite of optional payloads called accessories. These payloads can b
     </tr>
     <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER</tt> </p></td>
       <td><p><tt>0</tt> </p></td>
-      <td><p>Enable primary laser scanner. By default this is a Sick LMS1xx, unless <tt>JACKAL_LASER_HOKUYO</tt> is set.</p></td>
+      <td><p>Enable primary laser scanner. By default this is a Sick LMS1xx, unless <tt>JACKAL_LASER_MODEL</tt> is set.</p></td>
     </tr>
-    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_HOKUYO</tt> </p></td>
-      <td><p><tt>0</tt> </p></td>
-      <td><p>Changes the primary laser scanner from a Sick LMS1xx to a Hokuyo UST-10.</p></td>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_MODEL</tt> </p></td>
+      <td><p><tt>lms1xx</tt> </p></td>
+      <td>
+        <p>Sets the model of the primary lidar sensor on the robot. Ignored if <tt>JACKAL_LASER</tt> is <tt>0</tt>.  Allowed values are:</p>
+        <ul>
+          <li><tt>lms1xx</tt> - Sick LMS-1xx (default)</li>
+          <li><tt>ust10</tt> - Hokuyo UST-10</li>
+        </ul>
+        <p>Replaces the <tt>JACKAL_LASER_HOKUYO</tt> from older versions of Jackal.</p>
+      </td>
     </tr>
     <tr>  <td><span class="anchor" id="line-12"></span><p><tt>JACKAL_LASER_MOUNT</tt> </p></td>
       <td><p><tt>front</tt> </p></td>
@@ -48,6 +55,66 @@ Jackal has a suite of optional payloads called accessories. These payloads can b
     <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_LASER_HOST</tt> </p></td>
       <td><p><tt>192.168.1.20</tt> </p></td>
       <td><p>IP address of main lidar (used by <a href="http://wiki.ros.org/jackal_bringup">jackal_bringup</a>) </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_SECONDARY</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Enable secondary laser scanner. By default this is a Sick LMS1xx, unless <tt>JACKAL_LASER_SECONDARY_MODEL</tt> is set.</p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_SECONDARY_MODEL</tt> </p></td>
+      <td><p><tt>lms1xx</tt> </p></td>
+      <td>
+        <p>Sets the model of the secondary lidar sensor on the robot. Ignored if <tt>JACKAL_LASER_SECONDARY</tt> is <tt>0</tt>.  Allowed values are:</p>
+        <ul>
+          <li><tt>lms1xx</tt> - Sick LMS-1xx (default)</li>
+          <li><tt>ust10</tt> - Hokuyo UST-10</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-12"></span><p><tt>JACKAL_LASER_SECONDARY_MOUNT</tt> </p></td>
+      <td><p><tt>rear</tt> </p></td>
+      <td><p>Where to attach seondary laser scanner on Jackal. </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-13"></span><p><tt>JACKAL_LASER_SECONDARY_OFFSET</tt> </p></td>
+      <td><p><tt>"0&nbsp;0&nbsp;0"</tt> </p></td>
+      <td><p>XYZ offset from the mount. </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-14"></span><p><tt>JACKAL_LASER_SECONDARY_RPY</tt> </p></td>
+      <td><p><tt>"0&nbsp;0&nbsp;3.14159"</tt> </p></td>
+      <td><p>RPY offset from the mount (eg, to face it backward). </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_LASER_SECONDARY_HOST</tt> </p></td>
+      <td><p><tt>192.168.1.21</tt> </p></td>
+      <td><p>IP address of secondary lidar (used by <a href="http://wiki.ros.org/jackal_bringup">jackal_bringup</a>) </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_3D</tt> </p></td>
+      <td><p><tt>0</tt> </p></td>
+      <td><p>Enable a primary 3D laser scanner, by default a Velodyne VLP-16, unless <tt>JACKAL_LASER_3D_MODEL</tt> is set.</p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_LASER_3D_MODEL</tt> </p></td>
+      <td><p><tt>vlp16</tt> </p></td>
+      <td>
+        <p>Sets the model of the primary 3d lidar sensor on the robot. Ignored if <tt>JACKAL_LASER_3D</tt> is <tt>0</tt>.  Allowed values are:</p>
+        <ul>
+          <li><tt>vlp16</tt> - Velodyne VLP-16 (default)</li>
+          <li>No other models supported yet, but may be expanded in future</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-12"></span><p><tt>JACKAL_LASER_3D_MOUNT</tt> </p></td>
+      <td><p><tt>mid</tt> </p></td>
+      <td><p>Where to attach primary 3d laser scanner on Jackal. </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-13"></span><p><tt>JACKAL_LASER_3D_OFFSET</tt> </p></td>
+      <td><p><tt>"0&nbsp;0&nbsp;0"</tt> </p></td>
+      <td><p>XYZ offset from the mount. </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-14"></span><p><tt>JACKAL_LASER_3D_RPY</tt> </p></td>
+      <td><p><tt>"0&nbsp;0&nbsp;0"</tt> </p></td>
+      <td><p>RPY offset from the mount (eg, to face it backward). </p></td>
+    </tr>
+    <tr>  <td><span class="anchor" id="line-15"></span><p><tt>JACKAL_LASER_3D_HOST</tt> </p></td>
+      <td><p><tt>192.168.1.20</tt> </p></td>
+      <td><p>IP address of primary 3d lidar (used by <a href="http://wiki.ros.org/jackal_bringup">jackal_bringup</a>) </p></td>
     </tr>
     <tr>  <td><span class="anchor" id="line-11"></span><p><tt>JACKAL_FRONT_ACCESSORY_FENDER</tt> </p></td>
       <td><p><tt>0</tt> </p></td>
