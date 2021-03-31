@@ -1,7 +1,7 @@
 Keeping Jackal Updated
 ======================
 
-. note:: If you are upgrading your Jackal from an older version of ROS, please refer to `our upgrade instructions here <https://clearpathrobotics.com/assets/guides/kinetic/kinetic-to-melodic/index.html>`_.
+.. note:: If you are upgrading your Jackal from an older version of ROS, please refer to `our upgrade instructions here <https://clearpathrobotics.com/assets/guides/kinetic/kinetic-to-melodic/index.html>`_.
 
 Jackal is always being improved, both its own software and the many community ROS packages upon which it
 depends! You can use the apt package management system to receive new versions all software running on the
