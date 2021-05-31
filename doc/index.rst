@@ -43,12 +43,12 @@ skip the introductory chapters and jump straight to these ones.
     network
     navigation
     startup
-    calibration
     update
     cartographer
 
 .. toctree::
     :maxdepth: 0
+    :hidden:
     :caption: NVIDIA Jetson
 
     jetson_tx2

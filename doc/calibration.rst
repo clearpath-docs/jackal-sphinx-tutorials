@@ -1,7 +1,14 @@
 Calibrating Jackal's IMU
 ========================
 
-This tutorial explains how Jackal's compass works and how to calibrate it for top performance.
+.. warning::
+
+  Jackal's internal IMU is located very close to the motors that drive the wheels.  These motors can create strong
+  electro-magnetic fields, which make magnetometer data unreliable.  We do not recommend relying on the internal
+  magnetometer for orientation data.  If your application requires magnetometer data for absolute orientation estimates
+  we recommend installing an external sensor that can be positioned away from the motors.
+
+This tutorial explains how Jackal's compass works and how to calibrate it.
 
 Calibrating Jackal's magnetometer is a straightforward process. For best performance, it's recommended to
 perform this operation on a seasonal basis.
