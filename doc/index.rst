@@ -37,7 +37,6 @@ skip the introductory chapters and jump straight to these ones.
     network
     navigation
     startup
-    calibration
     update
     jetson
     cartographer
