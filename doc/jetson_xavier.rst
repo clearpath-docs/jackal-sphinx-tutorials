@@ -146,8 +146,7 @@ Once the OS has been written to the Xavier, log into it and run the following co
 
 .. code-block:: bash
 
-    curl -s https://raw.githubusercontent.com/clearpathrobotics/jetson_setup/melodic/scripts/xavier_setup.sh | bash -s --
-    bash JACKAL_SETUP.sh
+    wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh
 
 .. note::
 

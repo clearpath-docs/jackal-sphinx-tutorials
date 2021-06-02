@@ -135,8 +135,7 @@ Once the OS has been written to the TX2, log into it and run the following comma
 
 .. code-block:: bash
 
-    curl -s https://raw.githubusercontent.com/clearpathrobotics/jetson_setup/melodic/scripts/tx2_setup.sh | bash -s --
-    bash JACKAL_SETUP.sh
+    wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh
 
 .. note::
 

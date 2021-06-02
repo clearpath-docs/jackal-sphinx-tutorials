@@ -94,8 +94,7 @@ Once the OS has been written to the Nano, log into it and run the following comm
 
 .. code-block:: bash
 
-    curl -s https://raw.githubusercontent.com/clearpathrobotics/jetson_setup/melodic/scripts/nano_setup.sh | bash -s --
-    bash JACKAL_SETUP.sh
+    wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh
 
 .. note::
 
