@@ -27,6 +27,18 @@ If you see any errors, please `get in touch`_ and we'll see if we can get you so
 MCU Firmware Update
 -------------------
 
+.. note::
+
+    Jackal's MCU is mounted to the rear inside wall of the robot.  To access it, open the lid, keeping the computer
+    tray secured to the underside of the lid.
+
+    .. image:: images/mcu-annotated.jpg
+        :alt: Jackal's MCU
+
+    1. The ``M_RST`` button, used to reset the MCU
+    2. The MCU mode switch.  Left is ``NORM`` or normal mode, right is ``ALT`` used for flashing the firmware
+    3. The mini-USB port used for transmitting data.  This should be connected to Jackal's PC for both normal operation and firmware flashing
+
 When you update packages, there is periodically a new version of Jackal's firmware available. You will know this
 is the case in one of two ways:
 
@@ -40,11 +52,11 @@ If new firmware is available, follow the below procedure to flash it to Jackal's
 
 1. Place Jackal up on blocks. Firmware loading does not usually result in unintended motion, but it's safest when
    off the ground.
-2. Ensure that Jackal is on and open.
-3. In the top-middle of the main circuit board, look for a small left-right switch in between two buttons.
-4. By default it is in the left position, but move it now to the right position.
-5. Press the reset button to the left, labeled ``M_RST``. Jackal is now in its bootloader, ready to receive new
-   firmware.
+2. Ensure that Jackal is powered-on.  Open the lid of the robot to expose the MCU.
+3. Make sure the mini-USB cable (``3`` in the image above) is connected to Jackal's PC.
+4. Move the mode switch (``2`` in the image above) to ``ALT`` (right)
+5. Press ``M_RST`` (``1`` in the image above) to enter boot loader mode
+6. The MCU is now in bootloader mode, ready to receive new firmware.
 
 Now, from Jackal's PC (connected via SSH or screen/keyboard), execute:
 
@@ -52,12 +64,15 @@ Now, from Jackal's PC (connected via SSH or screen/keyboard), execute:
 
     rosrun jackal_firmware upload
 
-You should see about 20 seconds worth of lines output beginning with "Download from image ...". When this is
-complete, move the switch back to the leftmost position and quickly push the reset button again. You're now
-running the updated firmware!
+You should see about 20 seconds worth of lines output beginning with ``Download from image ...``. When this is
+complete perform the following steps to restore normal operation:
 
-If you're too slow on pushing the reset button, Jackal will power off, including the internal PC. It's okay
-if that happens; just press the external power button again, and you should be back in business.
+1. Move the mode switch back to ``NORM`` (left)
+2. Press ``M_RST``.  You must perform this step within a few seconds of changing the mode switch.  If you take too long Jackal may power down.  This is fine and won't harm the robot, but can be annoying.
+
+If the robot powers-down, simply ensure the mode switch is in the ``NORM`` position and power the robot back on.
+
+Jackal will now be using the new firmware you installed.
 
 
 .. _scratch:
