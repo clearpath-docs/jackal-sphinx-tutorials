@@ -14,7 +14,9 @@ First Connection
 
 By default, Jackal's wireless is in client mode, looking for the wireless network at the Clearpath factory. In
 order to set it up to connect to your own network, you'll have to open up the chassis and connect a network cable to
-the PC's ``STATIC`` port. The other end of this cable should be connected to your laptop, and you should give yourself an IP address in the ``192.168.131.x`` space, such as ``192.168.131.50``. Then, make the connection to Jackal's default static IP:
+the PC's ``STATIC`` port. The other end of this cable should be connected to your laptop, and you should give yourself
+an IP address in the ``192.168.131.x`` space, such as ``192.168.131.100``. Then, make the connection to Jackal's default
+static IP:
 
 .. code-block:: bash
 
@@ -48,26 +50,34 @@ login.
 Connecting to Wifi Access Point
 --------------------------------
 
-Jackal's standard wireless network manager is wicd_. To connect to an access point in your lab, run:
+Jackal uses ``netplan`` for configuring its wired and wireless interfaces.  To connect Jackal to your wireless network,
+create the file ``/etc/netplan/60-wireless.yaml`` and fill in the following:
+
+.. code-block:: yaml
+
+    network:
+      wifis:
+        # Fill in the SSID and PASSWORD fields as appropriate.  The password may be included as plain-text
+        # or as a password hash.  To generate the hashed password, run
+        #   echo -n 'WIFI_PASSWORD' | iconv -t UTF-16LE | openssl md4 -binary | xxd -p
+        # If you have multiple wireless cards you may include a block for each device.
+        # For more options, see https://netplan.io/reference/
+        $wireless_interface:
+          optional: true
+          access-points:
+            SSID_GOES_HERE:
+              password: PASSWORD_GOES_HERE
+          dhcp4: true
+          dhcp4-overrides:
+            send-hostname: true
+
+Once configured, run
 
 .. code-block:: bash
 
-    wicd-curses
+    sudo netplan apply
 
-You should see a browsable list of networks which the robot has detected. Use arrow keys to select the one you
-would like to connect to, and then press the right arrow to configure it. You can enter your network's password
-near the bottom of the page, and note that you must select the correct encryption scheme; most modern networks
-use ``WPA1/2 Passphrase``, so if that's you, make sure that option is selected. You also likely want to select
-the option to automatically reconnect to this network, so that Jackal will be there for you on your wireless
-automatically in the future.
-
-When you're finished, press F10 to save, and then C to connect.
-
-Wicd will tell you in the footer what IP address it was given by your lab's access point, so you can now log out,
-remove the network cable, and reconnect over wireless. When you've confirmed that all this is working as expected,
-close up Jackal's chassis.
-
-.. _wicd: https://launchpad.net/wicd
+to bring up your wireless connection.  Running ``ip a`` will show all active connections and their IP addresses.
 
 
 .. _remote:
@@ -123,67 +133,52 @@ run:
 
     rqt
 
-
-Advanced: Hosting a Wifi Access Point
+Reconfiguring the network bridge
 -------------------------------------
 
-The default network manager (wicd) only supports joining existing networks. It does not support creating its own wireless AP.
-However, there is experimental support in Jackal for a modern network manager called connman_, which does.
+In the unlikely event you must modify Jackal's ethernet bridge, you can do so by editing the Netplan configuration file
+found at ``/etc/netplan/50-clearpath-bridge.yaml``:
 
-.. _connman: https://01.org/connman
+.. code-block:: yaml
 
-.. warning:: You are unlikely to damage your hardware by switching Jackal from wicd to connman, but it's possible
-             you could end up with a platform which will need to be :ref:`reflashed back to the factory state <scratch>` in
-             order to be usable. If you're comfortable with this and have backed up your data, proceed.
+    # Configure the wired ports to form a single bridge
+    # We assume wired ports are en* or eth*
+    # This host will have address 192.168.131.1
+    network:
+    version: 2
+    renderer: networkd
+    ethernets:
+    bridge_eth:
+      dhcp4: no
+      dhcp6: no
+      match:
+        name: eth*
+    bridge_en:
+      dhcp4: no
+      dhcp6: no
+      match:
+        name: en*
+    bridges:
+    br0:
+      dhcp4: yes
+      dhcp6: no
+      interfaces: [bridge_en, bridge_eth]
+      addresses:
+        - 192.168.131.1/24
 
-Add the PPA which makes up-to-date connman releases available to Ubuntu 14.04, and install connman.
+This file will create a bridged interface called ``br0`` that will have a static address of 192.168.131.1, but will
+also be able to accept a DHCP lease when connected to a wired router.  By default all network ports named ``en*`` and
+``eth*`` are added to the bridge.  This includes all common wired port names, such as:
 
-.. code-block:: bash
+- ``eth0``
+- ``eno1``
+- ``enx0123456789ab``
+- ``enp3s0``
+- etc...
 
-    sudo add-apt-repository ppa:mikepurvis/network
-    sudo apt-get update
-    sudo apt-get install connman
+To include/exclude additional ports from the bridge, edit the ``match`` fields, or add additional ``bridge_*`` sections
+with their own ``match`` fields, and add those interfaces to the ``interfaces: [bridge_en, bridge_eth]`` line near the
+bottom of the file.
 
-Now edit the upstart job file in ``/etc/init/connman.conf``. Suggested configuration:
-
-.. code-block:: bash
-
-    description "Connection Manager"
-     
-    start on started dbus
-    stop on stopping dbus
-     
-    console log
-    respawn
-     
-    exec connmand --nobacktrace -n -c /etc/connman/main.conf -I eth1 -I hci0
-
-And edit connman's general configuration in ``/etc/connman/main.conf``. Suggested:
-
-.. code-block:: bash
-
-    [General]
-    TetheringTechnologies = wifi
-    PersistentTetheringMode = true
-
-Now, use the connmanctl command-line interface to set up an AP, which connman calls "tethering" mode:
-
-.. code-block:: bash
-
-    $ connmanctl
-    connmanctl> enable wifi
-    connmanctl> tether wifi on Jackal clearpath
-
-If you want to use connman to connect to another AP rather than host:
-
-.. code-block:: bash
-
-    $ connmanctl
-    connmanctl> tether wifi off
-    connmanctl> agent on
-    connmanctl> scan wifi
-    connmanctl> services
-    connmanctl> connect wifi_12345_67890_managed_psk
-
-Use as the argument to ``connect`` one of the services listed in the ``services`` output. You will be interrogated for
-the network's password, which is then cached in ``/var/lib/connman/``.
+We do not recommend changing the static address of the bridge to be anything other than ``192.168.131.1``; changing
+this may cause sensors that communicate over ethernet (e.g. lidars, cameras, GPS arrays) from working properly.
