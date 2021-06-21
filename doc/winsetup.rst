@@ -1,12 +1,18 @@
 Setting up Jackal with Windows
 ==============================
 
-The Clearpath Jackal does not ship with Windows installed by default. However, the core Jackal ROS nodes 
-are enabled on Windows 10, and ROS on Windows is supported by Microsoft. This guide will cover installing 
-Windows on your Jackal, installing ROS & Jackal ROS components, updating firmware and configuring Windows 
+.. note::
+
+    We have not yet thoroughly tested ROS Noetic on a Windows-powered Jackal.  We have tested with ROS Melodic,
+    and the following documentation is based on those results.  Some dependencies may be different for Noetic.
+    We apologize for any inconvenience.
+
+The Clearpath Jackal does not ship with Windows installed by default. However, the core Jackal ROS nodes
+are enabled on Windows 10, and ROS on Windows is supported by Microsoft. This guide will cover installing
+Windows on your Jackal, installing ROS & Jackal ROS components, updating firmware and configuring Windows
 for use.
 
-The following instructions assume that the Jackal is connected to a keyboard and mouse during setup. Once 
+The following instructions assume that the Jackal is connected to a keyboard and mouse during setup. Once
 configured, these can be removed and remote access can be leveraged.
 
 For more information on ROS on Windows, please visit `Microsoft's ROS documentation`_.
@@ -23,14 +29,14 @@ is an embedded version of Windows 10 for dedicated purpose devices, such as a Ro
 2. Create a `USB Boot stick`_ and copy the contents of the iso generated from the image above.
 3. Boot Windows and install following the prompts.
 4. Install ROS on Windows using the `ROS Wiki instructions`_.
-5. Please follow the instructions closely, as ROS is sensitive to the operating environment. 
+5. Please follow the instructions closely, as ROS is sensitive to the operating environment.
 
-This will install the development platform on the Jackal, which allows you to develop your robotics solutions. Once you've 
-finalized your development, you can build a deployment package and deploy your solutions using Chocolatey. 
+This will install the development platform on the Jackal, which allows you to develop your robotics solutions. Once you've
+finalized your development, you can build a deployment package and deploy your solutions using Chocolatey.
 
 If you see any problems with Jackal, please `get in touch`_ and we'll see if we can get you sorted out.
 
-If you have Windows specific questions or problems, Microsoft offers `community support through Github`_ and `paid support`_. 
+If you have Windows specific questions or problems, Microsoft offers `community support through Github`_ and `paid support`_.
 
 .. _download a trial: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise
 .. _ROS Wiki instructions: https://wiki.ros.org/Installation/Windows
@@ -49,12 +55,12 @@ Once you've installed Windows and ROS, It's time to install the Jackal software.
     :: Only need to install wget once.
     choco install wget
     :: Close and Reopen the command Window.
-    
+
     mkdir c:\ws
     cd c:\ws
     wget https://raw.githubusercontent.com/jackal/jackal-sphinx-tutorials/master/jackal.rosinstall
     wstool init src jackal.rosinstall
-    
+
     :: Later versions of pyproj are not deployed as a binary and do not build automatically
     pip install pyproj==1.9.6
 
@@ -70,7 +76,7 @@ Once you've installed Windows and ROS, It's time to install the Jackal software.
 MCU Firmware Update
 -------------------
 
-When you update packages, there is periodically a new version of Jackal's firmware available. 
+When you update packages, there is periodically a new version of Jackal's firmware available.
 
 If new firmware is available, follow the below procedure to flash it to Jackal's MCU:
 
@@ -89,7 +95,7 @@ Now, from Jackal's PC (connected via Windows Remote Desktop or screen/keyboard),
     cd c:\ws
     devel_isolated\setup.bat
     rosrun jackal_firmware_ms scripts/upload.bat
-    
+
 During execution of the script, it will display a dialog. Please follow the instructions in the command window.
 
 You should see about 20 seconds worth of lines output beginning with "Download from image ...". When this is
@@ -102,8 +108,8 @@ if that happens; just press the external power button again, and you should be b
 
 Wireless Network Setup
 ----------------------
-Windows provides an enterprise class network stack. To connect to a `Wifi`_, use the Windows networking user interface to connect 
-to an access point. 
+Windows provides an enterprise class network stack. To connect to a `Wifi`_, use the Windows networking user interface to connect
+to an access point.
 
 .. _Wifi: https://support.microsoft.com/en-us/help/17137/windows-setting-up-wireless-network
 
@@ -129,7 +135,7 @@ Once the pairing is complete you should be able to control the robot using your 
 you pair the controller it may be enumerated as the wrong device.  If the robot does not respond to your commands,
 power-cycle the full system and you should be set.
 
-To use teleop on Jackal, clone Microsoft's fork of the joystick driver, which leverages the Open Source SDL2 library for controller interfaces. 
+To use teleop on Jackal, clone Microsoft's fork of the joystick driver, which leverages the Open Source SDL2 library for controller interfaces.
 You'll need to ensure that this joystick ROS node is started by your launch files.
 
 .. code-block:: batch
@@ -138,4 +144,3 @@ You'll need to ensure that this joystick ROS node is started by your launch file
     devel_isolated\setup.bat
     git clone -b init_windows https://github.com/ms-iot/joystick_drivers
     catkin_make
-

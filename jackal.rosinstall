@@ -1,7 +1,7 @@
 - git:
     local-name: jackal
     uri: https://github.com/jackal/jackal
-    version: melodic-devel
+    version: noetic-devel
 - git:
     local-name: jackal_desktop
     uri: https://github.com/jackal/jackal_desktop
@@ -13,7 +13,7 @@
 - git:
     local-name: jackal_robot
     uri: https://github.com/jackal/jackal_robot
-    version: melodic-devel
+    version: noetic-devel
 - git:
     local-name: cv_camera
     uri: https://github.com/ms-iot/cv_camera
@@ -22,7 +22,7 @@
     local-name: nmea_msgs
     uri: https://github.com/ros-drivers/nmea_msgs
     version: master
-- git: 
+- git:
     local-name: unique_identifier
     uri: https://github.com/ros-geographic-info/unique_identifier
     version: master
@@ -66,4 +66,3 @@
     local-name: rosserial
     uri: https://github.com/ros-drivers/rosserial
     version: melodic-devel
-    

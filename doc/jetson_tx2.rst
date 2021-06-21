@@ -39,7 +39,7 @@ In order to power the Jetson make a cable which connects to the 12V user power t
 Step 3: Installing the Software
 --------------------------------
 
-`Download the latest version of Nvidia's SDK Manager <https://developer.nvidia.com/nvidia-sdk-manager>`_ on a PC running Ubuntu 18.04.  While that's downloading, put the TX2 into reovery mode by following these steps:
+`Download the latest version of Nvidia's SDK Manager <https://developer.nvidia.com/nvidia-sdk-manager>`_ on a PC running Ubuntu 20.04.  While that's downloading, put the TX2 into reovery mode by following these steps:
 
 1.  Connect the TX2 to your PC using the provided microUSB cable.
 2.  Make sure the TX2 is powered off
@@ -164,18 +164,18 @@ If you would like to pair a PS4 controller to drive the Jackal, hold down the PS
 
 The light on the controller will turn solid blue once it is paired. With the controller paired you should be able to control the Jackal by pressing L1 and using the left stick to drive. For more information see the Jackal manual.
 
-To use your host computer with the Jackal first `install ROS <http://wiki.ros.org/melodic/Installation>`_.  Once ROS is installed, install the Jackal packages with ``sudo apt install ros-melodic-jackal*``
+To use your host computer with the Jackal first `install ROS <http://wiki.ros.org/noetic/Installation>`_.  Once ROS is installed, install the Jackal packages with ``sudo apt install ros-noetic-jackal*``
 
 Note the IP address of the TX2 and `setup your host computer <http://wiki.ros.org/ROS/Tutorials/MultipleMachines>`_ to use it as the master.
 
 You can then run ``roslaunch jackal_viz view_robot.launch`` on your host machine.  You should see a model of the robot and be able to move the Jackal using the interactive markers. See: :doc:`Navigating with Jackal <navigation>` for more information on using maps for navigation and localization.
 
-The TX2 will reboot and will have ROS Melodic installed along with the Jackal drivers.
+The TX2 will reboot and will have ROS Noetic installed along with the Jackal drivers.
 
 To setup the Jetson to work with the Jackal, run ``bash ~/JACKAL_SETUP.sh`` on the Jetson and restart. When the Jetson starts up again, it should be connected to the Jackal. To see that the Jackal is connected by opening a terminal and executing "rostopic echo /status". You should see a 1hz message containing the Jackal's diagnostic information.
 
 If you would like to pair a PS4 controller to drive the Jackal, hold down the PS and Share buttons on the controller until the light bar starts to flash. In a terminal on the Jackal, run ``sudo ds4drv-pair`` and wait for the controller to connect.  With the controller paired you should be able to control the Jackal by pressing L1 and using the left stick to drive. For more information see the Jackal manual.
 
-To use your host computer with the Jackal first install ROS (http://wiki.ros.org/melodic/Installation) and setup a catkin workspace (http://wiki.ros.org/catkin/Tutorials/create_a_workspace). Clone the general Jackal repo and the desktop specific repo in to the src folder and compile it. Installing rosdeps if necessary with "rosdep install --from-paths src --ignore-src -r -y". https://github.com/jackal/jackal and https://github.com/jackal/jackal_desktop. Note the network ip of the TX2 and setup your host computer to use it as the master. http://wiki.ros.org/ROS/Tutorials/MultipleMachines
+To use your host computer with the Jackal first install ROS (http://wiki.ros.org/noetic/Installation) and setup a catkin workspace (http://wiki.ros.org/catkin/Tutorials/create_a_workspace). Clone the general Jackal repo and the desktop specific repo in to the src folder and compile it. Installing rosdeps if necessary with "rosdep install --from-paths src --ignore-src -r -y". https://github.com/jackal/jackal and https://github.com/jackal/jackal_desktop. Note the network ip of the TX2 and setup your host computer to use it as the master. http://wiki.ros.org/ROS/Tutorials/MultipleMachines
 
 You can then run "roslaunch jackal_viz view_robot.launch" on your host machine.  You should see a model of the robot and be able to move the Jackal using the interactive markers. See: http://www.clearpathrobotics.com/assets/guides/jackal/navigation.html

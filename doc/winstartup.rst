@@ -1,4 +1,4 @@
-Extending Jackal on Windows 
+Extending Jackal on Windows
 ===========================
 
 Now that's you've had Jackal for a while, you may be interested in how to extend it— perhaps add some more payloads,
@@ -16,7 +16,7 @@ The standard system-wide setup file is in ``c:\opt``:
 
 .. code:: batch
 
-    c:\opt\ros\melodic\x64\setup.bat
+    c:\opt\ros\noetic\x64\setup.bat
 
 When you run this command, you'll have access to `rosrun`, `roslaunch`, and all the other tools and packages
 installed on your system from debian packages.
@@ -24,7 +24,7 @@ installed on your system from debian packages.
 Supporting ROS packages on Windows
 ----------------------------------
 
-While many ROS packages are supported on Windows, most are not. Microsoft has provided `documentation`_ for 
+While many ROS packages are supported on Windows, most are not. Microsoft has provided `documentation`_ for
 updating and consuming ROS nodes. Please refer to Microsoft's documentation for porting and support options.
 
 
@@ -44,7 +44,7 @@ your own URDF which wraps the one provided by :roswiki:`jackal_description`.
 Starting ROS at boot
 --------------------
 
-To automatically start on ROS boot, you'll use the Windows Task Scheduler to start the task. The Task scheduler is 
+To automatically start on ROS boot, you'll use the Windows Task Scheduler to start the task. The Task scheduler is
 passed a Windows command file, which needs to start the ROS environment, and your code.
 
 Create a Windows command file, which includes the ROS environment and Install environment:
@@ -57,7 +57,7 @@ Inside that file, place the commands to initiatize ROS, initialize your workspac
 
 .. code:: batch
 
-    call c:\opt\ros\melodic\x64\setup.bat
+    call c:\opt\ros\noetic\x64\setup.bat
     call c:\catkin_ws\install\setup.bat
     roslaunch <package> <launch file>
 
@@ -68,4 +68,3 @@ Use the command Schtasks, to add a task which calls this script:
     schtasks /Create /RU <User> /RP <password> /SC ONLOGON /TN ROS /TR "c:\catkin_ws\start_ros.bat"
 
 The next time the system starts, the ROS task will run.
-
