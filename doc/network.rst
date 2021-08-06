@@ -57,12 +57,13 @@ create the file ``/etc/netplan/60-wireless.yaml`` and fill in the following:
 
     network:
       wifis:
+        # Replace WIRELESS_INTERFACE with the name of the wireless network device, e.g. wlan0 or wlp3s0
         # Fill in the SSID and PASSWORD fields as appropriate.  The password may be included as plain-text
         # or as a password hash.  To generate the hashed password, run
         #   echo -n 'WIFI_PASSWORD' | iconv -t UTF-16LE | openssl md4 -binary | xxd -p
         # If you have multiple wireless cards you may include a block for each device.
         # For more options, see https://netplan.io/reference/
-        $wireless_interface:
+        WIRELESS_INTERFACE:
           optional: true
           access-points:
             SSID_GOES_HERE:
