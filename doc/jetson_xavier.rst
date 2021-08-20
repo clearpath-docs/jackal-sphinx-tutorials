@@ -1,6 +1,15 @@
 Installing a Jetson Xavier AGX
 ==============================
 
+.. warning::
+
+    This page is a copy of the corresponding instructions from ROS Melodic.  At the time of writing Nvidia has not
+    yet released support for Ubuntu 20.04 on Jetson platforms.  This means you cannot currently run ROS Noetic on
+    a Jetson Xavier AGX.
+
+    When Nvidia has released support for Ubuntu 20.04 we will remove this warning and update the instructions below
+    as-necessary.
+
 Start by opening up the Jackal to reveal the computer tray. Use the lever on the front of the Jackal then the thumb screws on the lid. For more instructions refer to the `Jackal User's Manual <http://bit.ly/1f4hmqP>`_.
 
 Step 1: Remove mini-ITX Computer
