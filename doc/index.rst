@@ -62,7 +62,6 @@ skip the introductory chapters and jump straight to these ones.
 
     winsetup
     winstartup
-    wincalibration
 
 .. toctree::
     :titlesonly:
