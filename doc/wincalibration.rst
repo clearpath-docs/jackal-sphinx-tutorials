@@ -1,6 +1,13 @@
 Calibrating Jackal's IMU on Windows
 ===================================
 
+.. warning::
+
+  Jackal's internal IMU is located very close to the motors that drive the wheels.  These motors can create strong
+  electro-magnetic fields, which make magnetometer data unreliable.  We do not recommend relying on the internal
+  magnetometer for orientation data.  If your application requires magnetometer data for absolute orientation estimates
+  we recommend installing an external sensor that can be positioned away from the motors.
+
 This tutorial explains how Jackal's compass works and how to calibrate it for top performance.
 
 Calibrating Jackal's magnetometer is a straightforward process. For best performance, it's recommended to
@@ -55,5 +62,3 @@ The output will be:
     Computing magnetic calibration.
     Calibration generated in /tmp/calibrate_compass.g8oM/mag_config.yaml.
     Restart ROS service to begin using saved calibration.
-
-
