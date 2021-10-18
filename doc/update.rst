@@ -70,7 +70,7 @@ If Jackal's computer has become inoperable, or for any reason you want to restor
 by opening Jackal, lowering the computer tray, and connecting a screen and keyboard, as well as a wired internet
 connection. You can then download the most recent version of the Jackal boot ISO from the following location:
 
-https://packages.clearpathrobotics.com/stable/images/latest/
+https://packages.clearpathrobotics.com/stable/images/latest/kinetic-xenial/
 
 Use unetbootin or a similar tool to flash the ISO image to a USB memory stick. Boot Jackal's computer with the USB
 memory connected, and you should be in the purple Debian/Ubuntu installer. The installer runs by itself and shuts
