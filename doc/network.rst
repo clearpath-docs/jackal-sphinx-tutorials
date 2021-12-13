@@ -124,6 +124,88 @@ run:
     rqt
 
 
+Configuring Network Bridge
+---------------------------
+
+Jackal is configured to bridge its physical ethernet ports together.  This allows any ethernet port to be used as a
+connection to the internal ``192.168.131.1/24`` network -- for connecting sensors, diagnostic equipment, or
+manipulators -- or for connecting the robot to the internet for the purposes of installing updates.
+
+Depending on which version of `Clearpath's OS installer <https://packages.clearpathrobotics.com/stable/images/latest/melodic-bionic/amd64/>`_
+was used to install the OS on the robot, the bridge can be configured in one of two ways:
+
+**Netplan**
+
+Netplan is the default network configuration tool for Ubuntu 18.04 onward.  Instead of using the ``/etc/network/interfaces``
+file, as was done in Ubuntu 16.04 and earlier, netplan uses YAML-formatted files located in ``/etc/netplan``.  The
+default configuration file, ``/etc/netplan/50-clearpath-bridge.yaml``, is below:
+
+.. code-block:: yaml
+
+    # /etc/netplan/50-clearpath-bridge.yaml
+    network:
+    version: 2
+    renderer: networkd
+    ethernets:
+      # bridge all wired interfaces together on 192.168.131.x
+      bridge_eth:
+        dhcp4: no
+        dhcp6: no
+        match:
+          name: eth*
+      bridge_en:
+        dhcp4: no
+        dhcp6: no
+        match:
+          name: en*
+
+    bridges:
+      br0:
+        dhcp4: yes
+        dhcp6: no
+        interfaces: [bridge_eth, bridge_en]
+        addresses:
+          - 192.168.131.1/24
+
+To enable network configuration using netplan you must install the ``netplan.io`` package:
+
+.. code-block:: bash
+
+    sudo apt-get install netplan.io
+
+
+**Ifupdown & Interfaces**
+
+Upon release, Jackal was configured to use the same networking tools on Ubuntu 16.04 running ROS Kinetic.  This was done
+to ensure compatibility with Clearpath's other platforms, and to ease the transition to 18.04 and ROS Melodic.  As-of
+December 2021, configuration using ``/etc/network/interfaces`` on Ubuntu 18.04 should be considered deprecated; the
+configuration using ``netplan`` described above is the preferred method of configuring the network.
+
+For reference, the default ``/etc/network/interfaces`` file for Jackal is below:
+
+.. code-block::
+
+    auto lo br0 br0:0
+    iface lo inet loopback
+
+    # Bridge together physical ports on machine, assign standard Clearpath Robot IP.
+    iface br0 inet static
+      bridge_ports regex (eth.*)|(en.*)
+      address 192.168.131.1
+      netmask 255.255.255.0
+      bridge_maxwait 0
+
+    # Also seek out DHCP IP on those ports, for the sake of easily getting online,
+    # maintenance, ethernet radio support, etc.
+    iface br0:0 inet dhcp
+
+To enable network configuration using ``/etc/network/interfaces`` you must install the ``ifupdown`` package:
+
+.. code-block:: bash
+
+    sudo apt-get install ifupdown
+
+
 Advanced: Hosting a Wifi Access Point
 -------------------------------------
 
