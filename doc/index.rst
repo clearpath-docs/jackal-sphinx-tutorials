@@ -62,6 +62,13 @@ skip the introductory chapters and jump straight to these ones.
 .. toctree::
     :titlesonly:
     :hidden:
+    :caption: Testing Jackal
+
+    JackalTests
+
+.. toctree::
+    :titlesonly:
+    :hidden:
     :caption: Getting Started with Windows
 
     winsetup
