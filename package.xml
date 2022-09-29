@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <package>
   <name>jackal_tutorials</name>
-  <version>0.6.0</version>
+  <version>1.0.0</version>
   <description>Jackal's tutorials.</description>
   <maintainer email="civerachb@clearpathrobotics.com">Chris Iverach-Brereton</maintainer>
+  <maintainer email="rkreinin@clearpathrobotics.com">Roni Kreinin</maintainer>
 
   <license>BSD</license>
 
