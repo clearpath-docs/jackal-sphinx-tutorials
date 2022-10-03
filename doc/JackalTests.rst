@@ -27,11 +27,15 @@ Upon running ``ros_tests``, a list of available tests will be shown in a menu. F
 
 The details of each test are shown below.
 
-**E-Stop Test**
+**Motion Stop Test**
 
-The **E-Stop Test** checks that the robot's E-Stop is working properly. 
+.. note::
 
-This test subscribes to the ``/status`` ROS topic and checks that when the E-Stop is manually engaged by the user, the E-Stop state is correctly reported on the ``/status`` ROS topic.
+  This test is formerly called the E-Stop Test.
+
+The **Motion Stop Test** checks that the robot's motion stop is working properly. 
+
+This test subscribes to the ``/status`` ROS topic and checks that when the motion stop is manually engaged by the user, the motion stop state is correctly reported on the ``/status`` ROS topic.
 
 **ADC Test**
 
