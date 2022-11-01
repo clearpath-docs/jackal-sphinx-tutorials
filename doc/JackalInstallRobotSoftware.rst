@@ -35,6 +35,10 @@ The robot will power off. Turn the robot back on by pressing the power button.
 Installing from Debian Packages
 --------------------------------
 
+.. note::
+
+    Jackal Debian packages are not yet available. Please install from source.
+
 The preferred way to install Jackal’s packages is using precompiled Debian packages. These packages are available for Ubuntu 20.04.
 
 On the physical robot you need to install the ``jackal_robot`` package. In terminal, run:
@@ -50,40 +54,46 @@ Jackal packages are available on GitHub_, and can be compiled and installed from
 
 .. _GitHub: https://github.com/jackal/
 
-1. Create a workspace directory. In terminal, run:
+1. Install vcs:
+
+.. code-block:: bash
+
+    sudo apt-get update
+    sudo apt-get install python3-vcstool
+
+2. Create a workspace directory. In terminal, run:
 
 .. code-block:: bash
 
     mkdir -p ~/jackal_ws/src
 
-2. Clone the Jackal repositories into your workspace directory. In terminal, run:
+3. Clone the Jackal repositories into your workspace directory. In terminal, run:
 
 .. code-block:: bash
 
-    cd ~/jackal_ws/src
-    git clone -b foxy-devel https://github.com/jackal/jackal.git
-    git clone -b foxy-devel https://github.com/jackal/jackal_robot.git
-    cd ..
+    cd ~/jackal_ws
+    wget https://raw.githubusercontent.com/jackal/jackal_robot/foxy-devel/dependencies.repos
+    vcs import src < dependencies.repos
 
-3. Source the ROS2 Foxy installation. In terminal, run:
+4. Source the ROS2 Foxy installation. In terminal, run:
 
 .. code-block:: bash
 
     source /opt/ros/foxy/setup.bash
 
-4. Install additional dependencies. In terminal, run:
+5. Install additional dependencies. In terminal, run:
 
 .. code-block:: bash
 
     rosdep install --from-paths src --ignore-src --rosdistro=$ROS_DISTRO -y
 
-5. Build the workspace. In terminal, run:
+6. Build the workspace. In terminal, run:
 
 .. code-block:: bash
 
     colcon build
 
-6. You can now source your workspace to make use of the packages you just built. In terminal, run:
+7. You can now source your workspace to make use of the packages you just built. In terminal, run:
 
 .. code-block:: bash
 
@@ -93,6 +103,10 @@ Installing the microROS agent
 -----------------------------
 
 The microROS agent is not currently released as a debian package, so we must build it from source.
+
+.. note::
+
+    If you have built the Jackal packages from source, you can skip to step 7.
 
 1. If you don't yet have a workspace directory, create one. In terminal, run:
 
@@ -155,12 +169,6 @@ Then install the job:
 .. code-block:: bash
 
     ros2 run jackal_robot install
-
-By default this will install the job with a ROS_DOMAIN_ID of 0. To use a ROS_DOMAIN_ID of 5, for example, run:
-
-.. code-block:: bash
-
-    ros2 run jackal_robot install 5
 
 Launching Jackal software manually
 ----------------------------------
