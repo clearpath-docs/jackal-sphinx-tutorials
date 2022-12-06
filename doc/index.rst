@@ -1,6 +1,10 @@
 Jackal UGV Tutorials
 ======================
 
+.. Warning::
+
+  These tutorials have been superceded. Find the latest Jackal tutorials at `docs.clearpathrobotics.com <https://docs.clearpathrobotics.com/docs/robots/jackal/tutorials_jackal>`_.
+
 .. image:: images/jackal_banner.png
     :alt: Jackal Robot
 
