@@ -3,7 +3,7 @@
 ---
 
 **Note:**
-These tutorials have been superceded. Find the latest Boxer tutorials at [docs.clearpathrobotics.com](https://docs.clearpathrobotics.com/docs/robots/jackal/tutorials_jackal).
+These tutorials have been superceded. Find the latest Jackal tutorials at [docs.clearpathrobotics.com](https://docs.clearpathrobotics.com/docs/robots/jackal/tutorials_jackal).
 
 ---
 
